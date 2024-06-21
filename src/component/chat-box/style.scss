@@ -1,0 +1,100 @@
+// Triangle Mixin
+@mixin triangle($color, $size, $direction) {
+    width: 0;
+    height: 0;
+
+    @if $direction =="up" {
+        border-right: ($size + px) solid transparent;
+        border-left: ($size + px) solid transparent;
+        border-bottom: ($size + px) solid $color;
+    }
+
+    @if $direction =="down" {
+        border-right: ($size + px) solid transparent;
+        border-left: ($size + px) solid transparent;
+        border-top: ($size + px) solid $color;
+    }
+
+    @if $direction =="right" {
+        border-top: ($size + px) solid transparent;
+        border-bottom: ($size + px) solid transparent;
+        border-left: ($size + px) solid $color;
+    }
+
+    @if $direction =="left" {
+        border-top: ($size + px) solid transparent;
+        border-bottom: ($size + px) solid transparent;
+        border-right: ($size + px) solid $color;
+    }
+}
+
+.chatbox {
+    background: rgba(255, 255, 255, 0.05);
+    width: 600px;
+    height: 75%;
+    border-radius: 0.2em;
+    position: relative;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+
+    &__messages {
+        &:nth-of-type(odd) .chatbox__messages__user-message--ind-message {
+            float: right;
+
+            &:after {
+                content: '';
+                position: absolute;
+                margin: -1.5em -17.06em;
+                @include triangle(#5D6AA8, 10, left);
+            }
+        }
+
+        &:nth-of-type(even) .chatbox__messages__user-message--ind-message {
+            float: left;
+
+            &:after {
+                content: '';
+                position: absolute;
+                margin: -1.5em 1.87em;
+                @include triangle(#5D6AA8, 10, right);
+            }
+        }
+    }
+
+    &__messages__user-message {
+        width: 450px;
+    }
+
+    &__messages__user-message--ind-message {
+        background: #5D6AA8;
+        padding: 1em 0;
+        height: auto;
+        width: 65%;
+        border-radius: 5px;
+        margin: 2em 1em;
+        overflow: auto;
+
+        &>p.name {
+            color: #fff;
+            font-size: 1em;
+        }
+
+        &>p.message {
+            color: #FFF;
+            font-size: 0.7em;
+            margin: 0 2.8em;
+        }
+    }
+
+
+    p {
+        float: left;
+        text-align: left;
+        margin: -0.25em 2em;
+        font-size: 0.7em;
+        font-weight: 300;
+        color: #FFF;
+        width: 200px;
+    }
+
+
+}
