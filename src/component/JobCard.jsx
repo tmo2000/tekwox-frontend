@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const JobCard = ({ title, companyName, address, applicants }) => {
   return (
     <div className="flex-col py-4 justify-start items-start gap-2">
-      <div className="h-[310px] lg:h-[316px] p-6 lg:p-10 bg-white rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-4">
+      <div className="h-[250px] lg:w-full w-[15rem] lg:h-[316px] p-6 lg:p-10 bg-white rounded-[16px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-4">
         {/* Applicants shown at top right on larger screens */}
         
-        <div className="w-full lg:w-[45rem] flex justify-between items-start">
+        <div className="w-full lg:w-[40rem] flex justify-between items-start">
           <div className="flex flex-col justify-start items-start gap-2 lg:gap-[32px]">
             <div className="text-left text-slate-500 lg:flex-row text-[27px] font-semibold font-inter">
               <div className="text-black lg:flex-row whitespace-nowrap text-base font-normal">
@@ -23,7 +23,7 @@ const JobCard = ({ title, companyName, address, applicants }) => {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-[50rem] h-auto text-black text-left text-base font-normal leading-normal">
+        <div className="w-full lg:w-[40rem] h-auto text-black text-left text-base font-normal leading-normal">
           {companyName}
           <br />
           <span>{address} onsite</span>

@@ -154,213 +154,199 @@ const Jobseekerprofile = () => {
           </div>
           </div>
           
-          <div className="w-[100%] px-5 md:ml-5 mt-[20rem] absolute justify-start items-start gap-28 md:inline-flex">
-            <div className="md:w-[37%] flex-col justify-start items-start gap-6 mb-10 inline-flex">
-              <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-96 inline-flex">
-                  <div className="text-slate-500 text-2xl font-semibold font-['Inter']">
-                    <PersonalForm />
-                  </div>
-                </div>
+        <div className="w-[100%] px-5 md:ml-5 mt-[20rem] absolute justify-start items-start gap-28 md:inline-flex">
+        <div className="md:w-[37%] flex-col justify-start items-start gap-6 mb-10 inline-flex">
+          <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-96 inline-flex">
+              <div className="text-slate-500 text-2xl font-semibold font-['Inter']">
+                <PersonalForm />
+              </div>
+            </div>
+            <div className="w-[80%] justify-start text-left inline-flex">
+              <div className="w-[90%] text-black text-lg font-normal font-['Inter']">
+                <h3>Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+                <h3>Nationality: Lorem ipsum</h3>
+                <h3>Country: Lorem ipsum</h3>
+              </div>
+              <div className="w-6 h-6 relative" />
+            </div>
+          </div>
+          <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-6 inline-flex">
+              <EducationForm />
+            </div>
+            <div className="self-stretch justify-start items-center gap-7 inline-flex">
+              <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
                 <div className="w-[80%] justify-start text-left inline-flex">
                   <div className="w-[90%] text-black text-lg font-normal font-['Inter']">
-                    {personalDetails && (
-                      <div>
-                        <h3>Bio: {personalDetails.bio}</h3>
-                        <h3>Nationality: {personalDetails.nationality}</h3>
-                        <h3>Country: {personalDetails.country}</h3>
-                      </div>
-                    )}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   </div>
                   <div className="w-6 h-6 relative" />
                 </div>
               </div>
-              <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-6 inline-flex">
-                  <EducationForm />
-                </div>
-                <div className="self-stretch justify-start items-center gap-7 inline-flex">
-                  <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
-                    <div className="w-[80%] justify-start text-left inline-flex">
-                      <div className="w-[90%] text-black text-lg font-normal font-['Inter']">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </div>
-                      <div className="w-6 h-6 relative" />
-                    </div>
-                  </div>
-                  <div className="w-6 h-6 relative" />
-                </div>
-              </div>
-               <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-6 inline-flex">
-                  <div className="text-slate-500 text-2xl font-semibold font-['Inter']">
-                    Languages
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-center gap-7 inline-flex">
-                  <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
-                    <div className="w-[80%] justify-start text-left inline-flex">
-                      <div className="w-[90%] text-black text-lg font-normal font-['Inter']">
-                        English:Fluent
-                      </div>
-                      <div className="w-6 h-6 relative" />
-                    </div>
-                  </div>
-                  <div className="w-6 h-6 relative" />
-                </div>
-              </div>
-              <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-6 inline-flex">
-                  <div className="text-slate-500 text-2xl font-semibold font-['Inter']">
-                    Verification
-                  </div>
-                </div>
-                <div className="self-stretch justify-between items-center inline-flex">
-                  <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
-                    <div className="w-[80%] justify-start text-left inline-flex">
-                      <div className="w-[90%] text-black text-lg font-normal font-['Inter']">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                      </div>
-                      <div className="w-6 h-6 relative" />
-                    </div>
-                  </div>
-                  <div className="w-6 h-6 relative" />
-                </div>
-              </div>  
+              <div className="w-6 h-6 relative" />
             </div>
-            <div className="md:w-[48%] flex-col justify-start items-start gap-6 inline-flex">
-              <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-96 inline-flex">
-                  <ProfessionalForm />
-                </div>
-                <div className="self-stretch justify-start items-center gap-24 inline-flex">
-                  <div className="w-[100%] px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
-                    <div className="w-[100%] justify-start text-left inline-flex">
-                      <div className="w-[80%] grow shrink basis-0 text-black text-lg font-medium font-['Inter']">
-                        Project Manager, Ascentree Services | Project
-                        Manager/Web Development{" "}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-6 h-6 relative" />
-                </div>
-                <div className="self-stretch justify-start items-center gap-36 inline-flex">
-                  <div className="grow shrink basis-0 text-black text-lg font-normal font-['Inter']">
-                    I am a Project Manager at ascentree services
+          </div>
+          <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-6 inline-flex">
+              <div className="text-slate-500 text-2xl font-semibold font-['Inter']">
+                Languages
+              </div>
+            </div>
+            <div className="self-stretch justify-start items-center gap-7 inline-flex">
+              <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
+                <div className="w-[80%] justify-start text-left inline-flex">
+                  <div className="w-[90%] text-black text-lg font-normal font-['Inter']">
+                    English: Fluent
                   </div>
                   <div className="w-6 h-6 relative" />
                 </div>
               </div>
-               <div className="self-stretch h-auto px-10 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-6 inline-flex">
-                  <ExperienceForm />
-                </div>
-                <div className="self-stretch justify-start items-center gap-7 inline-flex">
-                  <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
-                    <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                      <div className="text-black text-base font-normal font-['Inter']">
-                        {workexperience && (
-                          <div>
-                            <h3>Companyname: {workexperience.companyname}</h3>
-                            <h3>Job title: {workexperience.jobtitle}</h3>
-                            <h3>jobdescription: {workexperience.jobdescription}</h3>
-                          </div>
-                        )}
-                      </div>
-                    </div>
+              <div className="w-6 h-6 relative" />
+            </div>
+          </div>
+          <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-6 inline-flex">
+              <div className="text-slate-500 text-2xl font-semibold font-['Inter']">
+                Verification
+              </div>
+            </div>
+            <div className="self-stretch justify-between items-center inline-flex">
+              <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
+                <div className="w-[80%] justify-start text-left inline-flex">
+                  <div className="w-[90%] text-black text-lg font-normal font-['Inter']">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   </div>
                   <div className="w-6 h-6 relative" />
                 </div>
               </div>
-                <div className="self-stretch h-80 px-10 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-96 inline-flex">
-                  <PortfolioForm />
-                </div>
-                <div className="self-stretch h-48 flex-col justify-start items-center gap-5 flex">
-                  <div className="flex-col justify-start items-center gap-5 flex">
-                    <div className="text-black text-xl font-normal font-['Inter']">
-                      You are more likely to get a Job when you add a portfolio.
-                    </div>
-                    <div className="px-2 py-1 justify-center items-center gap-2 inline-flex">
-                      <div className="text-slate-500 text-base font-normal font-['Inter'] underline">
-                        Add a Portfolio
-                      </div>
-                    </div>
+              <div className="w-6 h-6 relative" />
+            </div>
+          </div>
+        </div>
+        <div className="md:w-[46%] w-full  flex-col justify-start items-start gap-6 inline-flex">
+          <div className="h-auto self-stretch px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-96 inline-flex">
+              <ProfessionalForm />
+            </div>
+            <div className="self-stretch justify-start items-center gap-24 inline-flex">
+              <div className="w-[100%] px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
+                <div className="w-[100%] justify-start text-left inline-flex">
+                  <div className="w-[80%] grow shrink basis-0 text-black text-lg font-medium font-['Inter']">
+                    Project Manager, Ascentree Services | Project Manager/Web Development
                   </div>
                 </div>
               </div>
-                <div className="self-stretch h-40 px-10 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-6 inline-flex">
-                  <SkillsForm />
-                </div>
-                <div className="self-stretch justify-between items-center inline-flex">
-                  <div className="grow shrink basis-0 h-9 justify-start items-start gap-8 flex">
-                    <div className="w-24 p-2 bg-zinc-100 rounded-2xl border border-neutral-500 border-opacity-50 justify-center items-center gap-2 flex">
-                      <div className="text-black text-xl font-medium font-['Inter']">
-                        Power BI
-                      </div>
-                    </div>
-                    <div className="w-32 p-2 bg-zinc-100 rounded-2xl border border-neutral-500 border-opacity-50 justify-center items-center gap-2 flex">
-                      <div className="text-black text-xl font-medium font-['Inter']">
-                        Leadership
-                      </div>
-                    </div>
-                    <div className="w-60 p-2 bg-zinc-100 rounded-2xl border border-neutral-500 border-opacity-50 justify-center items-center gap-2 flex">
-                      <div className="text-black text-xl font-medium font-['Inter']">
-                        Business Development
-                      </div>
-                    </div>
+              <div className="w-6 h-6 relative" />
+            </div>
+            <div className="self-stretch justify-start items-center gap-36 inline-flex">
+              <div className="grow shrink basis-0 text-black text-lg font-normal font-['Inter']">
+                I am a Project Manager at ascentree services
+              </div>
+              <div className="w-6 h-6 relative" />
+            </div>
+          </div>
+          <div className="self-stretch h-auto px-10 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-6 inline-flex">
+              <ExperienceForm />
+            </div>
+            <div className="self-stretch justify-start items-center gap-7 inline-flex">
+              <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
+                <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                  <div className="text-black text-base font-normal font-['Inter']">
+                    <h3>Company Name: Lorem ipsum</h3>
+                    <h3>Job title: Lorem ipsum</h3>
+                    <h3>Job description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
                   </div>
-                  <div className="w-6 h-6 relative" />
                 </div>
               </div>
-               <div className="self-stretch h-auto px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-6 inline-flex">
-                  <CertificatesForm />
+              <div className="w-6 h-6 relative" />
+            </div>
+          </div>
+          <div className="self-stretch h-80 px-10 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-96 inline-flex">
+              <PortfolioForm />
+            </div>
+            <div className="self-stretch h-48 flex-col justify-start items-center gap-5 flex">
+              <div className="flex-col justify-start items-center gap-5 flex">
+                <div className="text-black text-xl font-normal font-['Inter']">
+                  You are more likely to get a Job when you add a portfolio.
                 </div>
-                <div className="self-stretch text-left justify-start items-center gap-7 inline-flex">
-                  <div className="w-[100%] grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
-                    <div className="w-[100%] self-stretch justify-start items-start gap-2 inline-flex">
-                      <div className="w-[80%]">
-                        <span className="text-black text-lg font-semibold font-['Inter'] leading-relaxed">
-                          Employee of the Month
-                          <br />
-                        </span>
-                        <span className="text-black text-base font-normal font-['Inter'] leading-normal">
-                          Edge water Solutions
-                          <br />
-                          October 2023
-                        </span>
-                      </div>
-                    </div>
+                <div className="px-2 py-1 justify-center items-center gap-2 inline-flex">
+                  <div className="text-slate-500 text-base font-normal font-['Inter'] underline">
+                    Add a Portfolio
                   </div>
-                  <div className="w-6 h-6 relative" />
                 </div>
               </div>
-              <div className="self-stretch h-auto px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
-                <div className="justify-start items-start gap-6 inline-flex">
-                  <ProjectsForm />
-                </div>
-                <div className="self-stretch  text-left justify-between items-center inline-flex">
-                  <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
-                    <div className="self-stretch justify-start items-start gap-2 inline-flex">
-                      <div className="grow shrink basis-0 text-black text-base font-normal font-['Inter']">
-                        Projects help you do more of the work you love to do.
-                        Create project offerings that highlight your strengths
-                        and attract more clients.{" "}
-                      </div>
-                    </div>
+            </div>
+          </div>
+          <div className="self-stretch h-40 px-10 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-6 inline-flex">
+              <SkillsForm />
+            </div>
+            <div className="lg:self-stretch lg:justify-between lg:items-center lg:inline-flex">
+              <div className="grow shrink basis-0 h-9 justify-start items-start gap-5 lg:gap-8 flex">
+                <div className="lg:w-24 p-2 bg-zinc-100 rounded-2xl border border-neutral-500 border-opacity-50 justify-center items-center gap-1 flex">
+                  <div className="text-black lg:text-xl text-sm font-medium font-['Inter']">
+                    Power BI
                   </div>
-                  <div className="w-6 h-6 relative" />
                 </div>
-              </div> 
-                
-            </div> 
-          </div> 
+                <div className="lg:w-32 p-2 bg-zinc-100 rounded-2xl border border-neutral-500 border-opacity-50 justify-center items-center gap-1 flex">
+                  <div className="text-black lg:text-xl text-sm font-medium font-['Inter']">
+                    Leadership
+                  </div>
+                </div>
+                <div className="lg:w-60 p-2 bg-zinc-100 rounded-2xl border border-neutral-500 border-opacity-50 justify-center items-center gap-1 flex">
+                  <div className="text-black lg:text-xl text-sm font-medium font-['Inter']">
+                    Business Development
+                  </div>
+                </div>
+              </div>
+              <div className="w-6 h-6 relative" />
+            </div>
+          </div>
+          <div className="self-stretch h-auto px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-6 inline-flex">
+              <CertificatesForm />
+            </div>
+            <div className="self-stretch text-left justify-start items-center gap-7 inline-flex">
+              <div className="w-[100%] grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
+                <div className="w-[100%] self-stretch justify-start items-start gap-2 inline-flex">
+                  <div className="w-[80%]">
+                    <span className="text-black text-lg font-semibold font-['Inter'] leading-relaxed">
+                      Employee of the Month
+                      <br />
+                    </span>
+                    <span className="text-black text-base font-normal font-['Inter'] leading-normal">
+                      Edge water Solutions
+                      <br />
+                      October 2023
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="w-6 h-6 relative" />
+            </div>
+          </div>
+          <div className="self-stretch h-auto px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+            <div className="justify-start items-start gap-6 inline-flex">
+              <div className="text-slate-500 text-2xl font-semibold font-['Inter']">
+                Projects
+              </div>
+            </div>
+            <div className="self-stretch  text-left justify-between items-center inline-flex">
+              <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
+                <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                  <div className="grow shrink basis-0 text-black text-base font-normal font-['Inter']">
+                    Projects help you do more of the work you love to do. Create project offerings that highlight your strengths and attract more clients.
+                  </div>
+                </div>
+              </div>
+              <div className="w-6 h-6 relative" />
+            </div>
+          </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>

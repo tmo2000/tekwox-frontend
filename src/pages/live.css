@@ -1,0 +1,49 @@
+.tab-container .MuiTab-root.Mui-selected{
+    color: #5D6AA8 ;
+}
+.tab-container .MuiTabs-indicator{
+  background-color: #5D6AA8 ;
+}
+
+.active-tab{
+  color:#5D6AA8;
+  border-bottom:#5D6AA8 solid 1px;
+  transition: color 0.3s ease-in, border-bottom .5s ease-in;
+
+}
+
+
+.tab-container .MuiTab-root.Mui-selected {
+    color: #5D6AA8;
+}
+
+.tab-container .MuiTabs-indicator {
+    background-color: #5D6AA8;
+}
+
+.active-tab {
+    color: #5D6AA8;
+    border-bottom: #5D6AA8 solid 1px;
+    transition: color 0.3s ease-in, border-bottom 0.5s ease-in;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .tab-container .MuiTab-root {
+        text-transform: none; /* Remove capitalization */
+        display: block; /* Stack tabs vertically */
+        width: 100%;
+        text-align: left;
+        padding: 10px 0;
+        border-bottom: 1px solid #e0e0e0; /* Optional: Add a border between tabs */
+    }
+    
+    .tab-container .MuiTabs-flexContainer {
+        flex-direction: column;
+    }
+
+    .tab-container .MuiTabs-indicator {
+        width: 100%;
+        left: 0;
+    }
+}

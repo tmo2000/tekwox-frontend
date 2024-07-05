@@ -1,0 +1,67 @@
+<div className="w-[50rem] h-auto flex-col justify-start items-start gap-8 inline-flex">
+          <div className="w-[40rem]">
+            <input
+              className="border-3 bg-[#F6F6F6] border w-[100%] px-10 rounded-2xl h-[4rem]"
+              type="text"
+              placeholder="Search for Projects"
+            />
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold">Projects you might like</h1>
+          </div>
+            <Box
+              className="tab-container"
+              sx={{ borderBottom: 1, borderColor: "divider" }}
+            >
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="basic tabs example"
+              >
+                <Tab className="capitalize" label="Best Matches" />
+                <Tab label="Most Recent" />
+                <Tab label="Saved Projects" />
+                <Tab label="Bided Projects" />
+
+                
+
+              </Tabs>
+            </Box>
+            <CustomTabPanel value={value} index={0}>
+              <Typography>
+                <LiveProjectCard projectName={"Adaptive Soft Robotic Limb for Rehabilitation Assistance"} stateCountry={"Lagos, Nigeria"}
+                scope={"Open to only Local Businesses"} companyName={"Edgewater solutions"} Location={"Columbia SC"} bidLimit={"*this bid has a limit of $5,000.00 "}/>
+                <ProjectCard projectName={"AI augmented renewable energy"} companyName={"Agama solutions"} Location={"United states"}/>
+                <ProjectCard projectName={"Weather forecasting system"} companyName={"KeyFactor Inc"} Location={"Atlanta GC"}/>
+                <ProjectCard projectName={"Data Leakage detection system"} companyName={"Pheonix services"} Location={"San Jose"}/>
+              </Typography>
+              </CustomTabPanel>
+
+              <CustomTabPanel value={value} index={1}>
+              <Typography>
+                <ProjectCard projectName={"AI augmented renewable energy"} companyName={"Agama solutions"} Location={"United states"}/>
+                <ProjectCard projectName={"Programmable soft robotics"} companyName={"Edgewater solutions"} Location={"Columbia SC"}/>
+              </Typography>
+              </CustomTabPanel>
+
+              <CustomTabPanel value={value} index={2}>
+              <Typography>
+                <ProjectCardSaved projectName={"AI augmented renewable energy"} companyName={"Agama solutions"} Location={"United states"}/>
+                <ProjectCardSaved projectName={"Weather forecasting system"} companyName={"KeyFactor Inc"} Location={"Atlanta GC"}/>
+                <ProjectCardSaved projectName={"Data Leakage detection system"} companyName={"Pheonix services"} Location={"San Jose"}/>
+                <ProjectCardSaved projectName={"Data Leakage detection system"} companyName={"Pheonix services"} Location={"San Jose"}/>
+
+              </Typography>
+              </CustomTabPanel>
+
+              <CustomTabPanel value={value} index={3}>
+              <Typography>
+                <ProjectCardSaved projectName={"Programmable soft robotics"} companyName={"Edgewater solutions"} Location={"Columbia SC"}/>
+                <ProjectCardSaved projectName={"AI augmented renewable energy"} companyName={"Agama solutions"} Location={"United states"}/>
+                <ProjectCardSaved projectName={"Weather forecasting system"} companyName={"KeyFactor Inc"} Location={"Atlanta GC"}/>
+                <ProjectCardSaved projectName={"Data Leakage detection system"} companyName={"Pheonix services"} Location={"San Jose"}/>
+
+              </Typography>
+              </CustomTabPanel>
+  
+        </div>

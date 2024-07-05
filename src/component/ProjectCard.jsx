@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ProjectCard = ({ projectName, companyName, location }) => {
   return (
     <div className="flex-col py-[1rem] justify-start items-start gap-2 flex">
-      <div className="h-[280px] lg:h-[310px] p-6 lg:p-10 bg-white rounded-[16px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-6 flex">
+      <div className="h-[250px] lg:h-[310px] lg:w-full w-[16rem]  p-6 lg:p-10 bg-white rounded-[16px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-6 flex">
         <div className="w-full lg:w-[40rem] justify-between items-start inline-flex">
           <div className="justify-start items-center gap-[2rem] lg:gap-[3rem] flex">
             <div className="text-[#5D6AA8] text-lg lg:text-2xl font-semibold">{projectName}</div>

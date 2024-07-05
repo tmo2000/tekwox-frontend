@@ -527,3 +527,1021 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
+
+
+
+
+
+
+
+     {/* <div className="justify-start mr-[36rem] mb-8 items-start gap-[50px] inline-flex">
+            <div className="px-2 py-[5px] justify-center items-center gap-2 flex">
+              <div
+                className="text-black text-xl whitespace-nowrap  font-medium font-['Inter'] cursor-pointer"
+                onClick={() => updateToggle(1)}
+              >
+                Best Matches
+              </div>
+            </div>
+            <div className="px-2 py-[5px] justify-center items-center gap-2 flex">
+              <div
+                className="text-black text-xl whitespace-nowrap  font-medium font-['Inter'] cursor-pointer"
+                onClick={() => updateToggle(2)}
+              >
+                Most Recent
+              </div>
+            </div>
+            <div className="px-2 py-[5px] justify-center items-center gap-2 flex">
+              <div
+                className="text-black text-xl whitespace-nowrap font-medium font-['Inter'] cursor-pointer"
+                onClick={() => updateToggle(3)}
+              >
+                Saved Projects
+              </div>
+            </div>
+            <div className="px-2 py-[5px] justify-center items-center gap-2 flex">
+              <div
+                className="text-black text-xl whitespace-nowrap font-medium font-['Inter'] cursor-pointer"
+                onClick={() => updateToggle(4)}
+              >
+                Bided Projects
+              </div>
+            </div>
+          </div> */}
+          {/* <div className={toggle === 1 ? "show-content" : "content"}>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Adaptive Soft Robotic Limb for Rehabilitation Assistance{" "}
+                        <br />
+                        <div className="flex mt-3 gap-7">
+                          <div>Lagos, Nigeria</div>
+                          <div> Open to only Local Businesses</div>
+                          <div>Bid Limit</div>
+                          <div>Live Project</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Edgewater solutions <br />{" "}
+                  <span className="mb-5"> Columbia SC</span>
+                  <p className="text-[#938E8E]">
+                    *this bid has a limit of $5,000.00
+                  </p>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <Link to="/listedprojectdetails">
+                      <button
+                        type="button"
+                        className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                      >
+                        View Project
+                      </button>
+                    </Link>
+
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <LiveProjectCard/>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        AI augmented renewable energy
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Agama solutions <br />{" "}
+                  <span className="mb-5"> United states</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Weather forecasting system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  KeyFactor Inc <br /> <span className="mb-5"> Atlanta GC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+          {/* <div className={toggle === 2 ? "show-content" : "content"}>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        AI augmented renewable energy
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Agama solutions <br />{" "}
+                  <span className="mb-5"> United states</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Programmable soft robotics
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Edgewater solutions <br />{" "}
+                  <span className="mb-5"> Columbia SC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+          {/* <div className={toggle === 3 ? "show-content" : "content"}>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        AI augmented renewable energy
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Agama solutions <br />{" "}
+                  <span className="mb-5"> United states</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Weather forecasting system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  KeyFactor Inc <br /> <span className="mb-5"> Atlanta GC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Data Leakage detection system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Pheonix services <br />{" "}
+                  <span className="mb-5"> San Jose</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Data Leakage detection system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Pheonix services <br />{" "}
+                  <span className="mb-5"> San Jose</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+          {/* <div className={toggle === 4 ? "show-content" : "content"}>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Programmable soft robotics
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Edgewater solutions <br />{" "}
+                  <span className="mb-5">Columbia SC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Weather forecasting system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  KeyFactor Inc <br /> <span className="mb-5"> Atlanta GC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Data Leakage detection system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Pheonix services <br />{" "}
+                  <span className="mb-5"> San Jose</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Data Leakage detection system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Pheonix services <br />{" "}
+                  <span className="mb-5"> San Jose</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+
+
+
+
+
+
+
+                  {/* <div className="justify-start mr-[36rem] mb-8 items-start gap-[50px] inline-flex">
+            <div className="px-2 py-[5px] justify-center items-center gap-2 flex">
+              <div
+                className="text-black text-xl whitespace-nowrap  font-medium font-['Inter'] cursor-pointer"
+                onClick={() => updateToggle(1)}
+              >
+                Best Matches
+              </div>
+            </div>
+            <div className="px-2 py-[5px] justify-center items-center gap-2 flex">
+              <div
+                className="text-black text-xl whitespace-nowrap  font-medium font-['Inter'] cursor-pointer"
+                onClick={() => updateToggle(2)}
+              >
+                Most Recent
+              </div>
+            </div>
+            <div className="px-2 py-[5px] justify-center items-center gap-2 flex">
+              <div
+                className="text-black text-xl whitespace-nowrap font-medium font-['Inter'] cursor-pointer"
+                onClick={() => updateToggle(3)}
+              >
+                Saved Projects
+              </div>
+            </div>
+            <div className="px-2 py-[5px] justify-center items-center gap-2 flex">
+              <div
+                className="text-black text-xl whitespace-nowrap font-medium font-['Inter'] cursor-pointer"
+                onClick={() => updateToggle(4)}
+              >
+                Bided Projects
+              </div>
+            </div>
+          </div> */}
+          {/* <div className={toggle === 1 ? "show-content" : "content"}>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Adaptive Soft Robotic Limb for Rehabilitation Assistance{" "}
+                        <br />
+                        <div className="flex mt-3 gap-7">
+                          <div>Lagos, Nigeria</div>
+                          <div> Open to only Local Businesses</div>
+                          <div>Bid Limit</div>
+                          <div>Live Project</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Edgewater solutions <br />{" "}
+                  <span className="mb-5"> Columbia SC</span>
+                  <p className="text-[#938E8E]">
+                    *this bid has a limit of $5,000.00
+                  </p>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <Link to="/listedprojectdetails">
+                      <button
+                        type="button"
+                        className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                      >
+                        View Project
+                      </button>
+                    </Link>
+
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <LiveProjectCard/>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        AI augmented renewable energy
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Agama solutions <br />{" "}
+                  <span className="mb-5"> United states</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Weather forecasting system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  KeyFactor Inc <br /> <span className="mb-5"> Atlanta GC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+          {/* <div className={toggle === 2 ? "show-content" : "content"}>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        AI augmented renewable energy
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Agama solutions <br />{" "}
+                  <span className="mb-5"> United states</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Programmable soft robotics
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Edgewater solutions <br />{" "}
+                  <span className="mb-5"> Columbia SC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
+                    >
+                      Save Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+          {/* <div className={toggle === 3 ? "show-content" : "content"}>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        AI augmented renewable energy
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Agama solutions <br />{" "}
+                  <span className="mb-5"> United states</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Weather forecasting system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  KeyFactor Inc <br /> <span className="mb-5"> Atlanta GC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Data Leakage detection system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Pheonix services <br />{" "}
+                  <span className="mb-5"> San Jose</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Data Leakage detection system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Pheonix services <br />{" "}
+                  <span className="mb-5"> San Jose</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+          {/* <div className={toggle === 4 ? "show-content" : "content"}>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Programmable soft robotics
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Edgewater solutions <br />{" "}
+                  <span className="mb-5">Columbia SC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Weather forecasting system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  KeyFactor Inc <br /> <span className="mb-5"> Atlanta GC</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Data Leakage detection system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Pheonix services <br />{" "}
+                  <span className="mb-5"> San Jose</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex-col justify-start text-left items-start gap-2 flex">
+              <div className="h-[316px] p-10 bg-white mb-[2rem] rounded-[20px] border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-12 flex">
+                <div className="w-[50rem] justify-between items-start inline-flex">
+                  <div className="justify-start items-center gap-[32rem] flex">
+                    <div className="justify-start items-end gap-[10rem] flex text-slate-500 text-[27px] font-semibold font-['Inter']">
+                      <div className="text-black text-base font-normal font-['Inter']">
+                        Data Leakage detection system
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="justify-start items-start gap-4 flex">
+                    <div className="w-6 h-6 relative" />
+                    <div className="w-6 h-6 relative" />
+                  </div>
+                </div>
+                <div className="w-[50rem] h-auto text-black text-left text-base font-normal font-['Inter'] leading-normal">
+                  Pheonix services <br />{" "}
+                  <span className="mb-5"> San Jose</span>
+                </div>
+                <div className="w-[40rem] justify-between items-end inline-flex">
+                  <div className="flex gap-5">
+                    <button
+                      type="button"
+                      className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
+                    >
+                      View Project
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}

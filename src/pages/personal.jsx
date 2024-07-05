@@ -303,7 +303,7 @@ const Personal = () => {
         )}
       </div>
     </div>
-      <div className="ml-36">
+      <div className="lg:ml-36 ml-4">
         <ul className="flex flex-col sm:flex-row border-b border-gray-300 mb-4 w-full sm:w-[80%]">
   <li
     className={`mb-2 sm:mb-0 sm:mr-8 md:mr-16 cursor-pointer ${toggle === 1 && "active-tab"}`}
@@ -759,7 +759,7 @@ const Personal = () => {
           />
         </div>
 
-        <div className="bg-gray-200 rounded-2xl p-2 items-center max-w-full sm:max-w-[20rem] mb-4">
+        <div className="bg-gray-200 rounded-2xl p-4 items-center w-[27rem] max-w-full sm:max-w-[20rem] mb-4">
           <label htmlFor="resume" className="flex items-center">
             <FontAwesomeIcon
               icon={faPaperclip}

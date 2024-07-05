@@ -87,7 +87,7 @@ const businessDashboard = () => {
         <div className="flex flex-col w-full lg:w-[1/2] p-5 gap-6 lg:gap-2 lg:items-start items-center">
           <div className="flex flex-col items-center">
             <Link to="/businessprofile">
-              <div className="border rounded-2xl px-[5rem] mt-14 h-auto text-center items-center lg:ml-8 lg:mt-8">
+              <div className="border rounded-2xl px-[5rem] mt-14 h-auto text-center items-center lg:ml-[3.5rem] lg:mt-8">
                 <img
                   src="profile.png"
                   alt="Profile"
@@ -96,7 +96,7 @@ const businessDashboard = () => {
                 <h6 className="mb-4">{businessName}</h6>
               </div>
             </Link>
-            <div className="w-full lg:w-[16rem] mt-4 lg:mt-0 flex items-center justify-center flex-col">
+            <div className="w-full lg:w-[16rem] mt-4 lg:mt-0 lg:ml-[3rem] flex items-center justify-center flex-col">
               <Link to="/postajob">
                 <button className="w-full px-16 py-2 mt-6 bg-[#5d6aa8] text-white font-bold rounded-full hover:bg-white hover:text-[#5d6aa8] hover:border-[#5d6aa8] hover:border">
                   Post a Job
