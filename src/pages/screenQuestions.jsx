@@ -3,112 +3,117 @@ import { Link } from "react-router-dom";
 
 const screenQuestions = () => {
   return (
-    <div>
-      <div className="flex">
+     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-between items-center">
         {/* Left-aligned image */}
         <div>
           <img
-            src="logo.png" // Replace with the actual path to your logo image
+            src="logo.png" // Replace with your actual logo path
             alt="Logo"
-            className="w-32 h-auto ml-12 mt-6"
+            className="w-24 h-auto mt-6"
           />
         </div>
 
         {/* Right-aligned image */}
-        <div className="ml-auto">
+        <div>
           <img
-            src="profile.png" // Replace with the actual path to your second image
+            src="profile.png" // Replace with your actual profile image path
             alt="Another Image"
-            className="w-12 h-auto mr-12 mt-6"
+            className="w-12 h-auto mt-6"
           />
         </div>
       </div>
-      <div className="items-center justify-center border border-1 rounded-2xl h-auto w-[80%] ml-[10rem] text-left">
-        <h1 className="ml-[3rem] mt-4">Screening Questions</h1>
-        <p className="ml-[3rem] mt-4">Answer these screening questions</p>
-        <br /> <br />
-        <div className="border border-1 border-black rounded-xl h-auto w-[75%]  ml-[3rem] mb-9 text-left">
-          <span className="pl-2">Have you completed the following level of Education: Bachelor's?</span>
-          {/* <button className="ml-[10rem]">x</button> */}
-          <div className="border border-1 border-black"></div>
-          <label className="pl-2" htmlFor="qualification">
-            Answer   <select
-                    type="text"
-                    id="country"
-                    name="country"
-                    className="mt-4 p-2 ml-4 mb-8  border border-gray-300 rounded-3xl  text-gray-500 w-[10rem] h-auto"
-                    placeholder=""
-                  >
-                    <option value="" className="" disabled selected>
-                        
-                    </option>
-                    <option value="">Yes</option>
-                    <option value="">No</option>
-                  </select>
+
+      <div className="border border-1 rounded-2xl mt-6 p-6">
+        <h1 className="text-3xl font-bold">Screening Questions</h1>
+        <p className="mt-4 text-lg">Answer these screening questions</p>
+
+        {/* Question 1 */}
+        <div className="border border-1 rounded-xl mt-6 p-4">
+          <span className="font-semibold">Have you completed the following level of Education: Bachelor's?</span>
+          <div className="border border-1 border-black mt-2"></div>
+          <label className="block mt-2" htmlFor="qualification">
+            Answer  
+            <select
+              type="text"
+              id="qualification"
+              name="qualification"
+              className="mt-2 p-2 border border-gray-300 rounded-md text-gray-500 w-full"
+              placeholder=""
+            >
+              <option value="" disabled selected>
+                Select an option
+              </option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </label>
         </div>
-        <div className="border border-1 border-black rounded-xl h-auto w-[75%] ml-[3rem] mb-9 text-left">
-          <span className="pl-2">Are you willing to undergo a background check, in accordance with local law/regulations?</span>
-          {/* <button className="ml-[10rem]">x</button> */}
-          <div className="border border-1 border-black"></div>
-          <label className="pl-2" htmlFor="qualification">
-            Answer  <select
-                    type="text"
-                    id="country"
-                    name="country"
-                    className="mt-4 p-2 ml-4 mb-8  border border-gray-300 rounded-3xl  text-gray-500 w-[10rem] h-auto"
-                    placeholder=""
-                  >
-                    <option value="" className="" disabled selected>
-                      
-                    </option>
-                    <option value="">Yes</option>
-                    <option value="">No</option>
-                  </select>
+
+        {/* Question 2 */}
+        <div className="border border-1 rounded-xl mt-6 p-4">
+          <span className="font-semibold">Are you willing to undergo a background check, in accordance with local law/regulations?</span>
+          <div className="border border-1 border-black mt-2"></div>
+          <label className="block mt-2" htmlFor="backgroundCheck">
+            Answer  
+            <select
+              type="text"
+              id="backgroundCheck"
+              name="backgroundCheck"
+              className="mt-2 p-2 border border-gray-300 rounded-md text-gray-500 w-full"
+              placeholder=""
+            >
+              <option value="" disabled selected>
+                Select an option
+              </option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </label>
         </div>
-        <div className="border border-1 border-black rounded-xl h-auto w-[75%] ml-[3rem] mb-9 text-left">
-          <span className="pl-2">Will you now or in the future require sponsorship for employment visa status?  </span>
-          {/* <button className="ml-[10rem]">x</button> */}
-          <div className="border border-1 border-black"></div>
-          <label className="pl-2" htmlFor="qualification">
-            Answer  <select
-                    type="text"
-                    id="country"
-                    name="country"
-                    className="mt-4 p-2 ml-4 mb-8  border border-gray-300 rounded-3xl  text-gray-500 w-[10rem] h-auto"
-                    placeholder=""
-                  >
-                    <option value="" className="" disabled selected>
-                      
-                    </option>
-                    <option value="">Yes</option>
-                    <option value="">No</option>
-                  </select>
+
+        {/* Question 3 */}
+        <div className="border border-1 rounded-xl mt-6 p-4">
+          <span className="font-semibold">Will you now or in the future require sponsorship for employment visa status?</span>
+          <div className="border border-1 border-black mt-2"></div>
+          <label className="block mt-2" htmlFor="sponsorship">
+            Answer  
+            <select
+              type="text"
+              id="sponsorship"
+              name="sponsorship"
+              className="mt-2 p-2 border border-gray-300 rounded-md text-gray-500 w-full"
+              placeholder=""
+            >
+              <option value="" disabled selected>
+                Select an option
+              </option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </label>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex justify-end mt-6">
+          <Link to="/jobseekerdashboard">
+            <button
+              type="button"
+              className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full mr-4"
+            >
+              Submit Application
+            </button>
+          </Link>
+          <Link to="/jobseekerdashboard">
+            <button
+              type="button"
+              className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-2 px-6 rounded-full"
+            >
+              Save for later
+            </button>
+          </Link>
         </div>
       </div>
-      <div className=" items-center justify-center w-[40rem] justify-between items-left mt-4 ml-[14rem] inline-flex">
-                <div className="flex mt-3 ml-10  gap-6">
-                    <Link to="/jobseekerdashboard">
-                        <button
-                            type="button"
-                            className="bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-8 rounded-full "
-                        >
-                            Submit Application
-                        </button>
-                    </Link >
-                    <Link to="/jobseekerdashboard">
-                    <button
-                        type="button"
-                        className="bg-[#F2AB39] hover:bg-blue-700 text-black font-bold py-1 px-8 rounded-full "
-                    >
-                        Save for later
-                    </button>
-                    </Link>
-                   
-                </div>
-            </div>
     </div>
   );
 };

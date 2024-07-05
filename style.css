@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+}
+
+#root{
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+}

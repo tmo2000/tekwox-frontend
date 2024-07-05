@@ -2,12 +2,12 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { faArrowLeft, faFileExport, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ScreenDraft from "../component/ScreenDraft";
 import ScreeningB from '../component/ScreeningB';
 
-
-const ViewBids = () => {
+const SideBySide = () => {
   return (
-     <div>
+    <div>
       {/* Navbar */}
       <div className="flex justify-between items-center px-6 py-4 ">
         {/* Left-aligned image */}
@@ -51,19 +51,17 @@ const ViewBids = () => {
         <div className="flex justify-start mt-4">
           <Link to="/postedjob" className="mr-2">
             <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
-            Back to Projects
+            Back to Jobs
           </Link>
         </div>
 
         {/* Job title */}
-    <h1 className="font-bold text-2xl mt-6 lg:mr-[22rem]">
-  Project A01 Adaptive Soft Robotic Limb For Rehabilitation Assistance
-</h1>
-
-
+        <h1 className="font-bold text-3xl mt-6 lg:mr-[29rem]">
+          Web Developer Intern
+        </h1>
 
         {/* Buttons */}
-        {/* <div className="mt-4 lg:mr-[30rem]">
+        <div className="mt-4 lg:mr-[30rem]">
           <button
             type="button"
             className="bg-[#5D6AA8] bg-opacity-95 hover:bg-[#5D6AA8] text-white font-bold py-2 px-8 rounded-full mr-2"
@@ -76,38 +74,43 @@ const ViewBids = () => {
           >
             Screening Questions
           </button>
-        </div> */}
+        </div>
 
        
 
         {/* Two side-by-side divs */}
         <div className="flex flex-col lg:flex-row gap-2 mt-4">
           {/* Left content */}
-          <div className=" overflow-x-auto border border-1 rounded-xl overflow-y-auto h-[654px] lg:w-1/4">
-            <div className='text-left bg-gray-300 rounded-tl-lg rounded-tr-lg w-full p-2 '>
-              <h2 className='text-xl'>TekworX</h2>
-              <h3>Consulting</h3>
-          
+          <div className="bg-gray-200 overflow-x-auto overflow-y-auto p-4  h-[654px] lg:w-1/4">
+            <div className='text-left '>
+              <h2 className='text-xl'>Temisola Olajide</h2>
+              <h3>Heriot Watt University</h3>
+              <h3>JP Morgan</h3>
             </div>
-            <div className='text-left mt-4  p-2'>
-              <h2 className='text-xl'>Ascentree Services LTD </h2>
-              <h3>Finance</h3>
-             
+            <div className='text-left mt-4'>
+              <h2 className='text-xl'>Emmanuel Akpan </h2>
+              <h3>University of Michigan</h3>
+              <h3>Google</h3>
             </div>
-            <div className='text-left mt-4  p-2'>
-              <h2 className='text-xl'>ARM Pension</h2>
-              <h3>Technology</h3>
-              
+            <div className='text-left mt-4'>
+              <h2 className='text-xl'>Fiyin Abdul</h2>
+              <h3>Harvard University</h3>
+              <h3>Goldman Sachs</h3>
             </div>
-            <div className='text-left mt-4  p-2'>
-              <h2 className='text-xl'>Creed XM</h2>
-              <h3>Accountancy</h3>
+            <div className='text-left mt-4'>
+              <h2 className='text-xl'>Hakeem Olajide</h2>
+              <h3>Obafemi Awolowo University</h3>
+              <h3>JP Morgan</h3>
             </div>
-            
+            <div className='text-left mt-4'>
+              <h2 className='text-xl'>Olufunmilayo Olajide</h2>
+              <h3>Heriot Watt University</h3>
+              <h3>Microsoft</h3>
+            </div>
           </div>
 
           {/* Right content */}
-               <div className="relative border border-1 overflow-x-auto rounded-xl overflow-y-auto p-4 flex-1 h-[654px] lg:w-3/4">
+               <div className="relative bg-gray-300 overflow-x-auto overflow-y-auto p-4 flex-1 h-[654px] lg:w-3/4">
       {/* Export Button */}
       <div className="absolute top-2 right-2">
         <button className="bg-[#5D6AA8] text-white px-4 py-2 rounded">
@@ -118,12 +121,13 @@ const ViewBids = () => {
                       <br />
       <div className='text-left p-3 bg-[#E8E8E8]'>
         <div className='flex justify-between'>
-          <h2 className='text-2xl'>TekworX</h2>
+          <h2 className='text-2xl'>Temisola Olajide</h2>
           <p className='text-right'>see full profile <FontAwesomeIcon icon={faArrowRight} /></p>
         </div>
         <div className='flex flex-row justify-between'>
           <div className='flex flex-col'>
-            <h3>Consulting</h3>
+            <h3>Heriot Watt University</h3>
+            <h3>JP Morgan</h3>
           </div>
           <div className='flex'>
             <label htmlFor="fit" className="mr-2">
@@ -144,27 +148,28 @@ const ViewBids = () => {
 
       <div className='text-left mt-4'>
         <h1 className='font-bold text-2xl'>Profile Insights</h1>
-        <h2 className='text-xl'>Previous Projects</h2>
+        <h2 className='text-xl'>Experience</h2>
         <div className='flex items-center mt-2'>
           <div className='border border-1 bg-gray-100 w-12 h-12'></div>
           <div className='ml-2'>
-            <h2>Robotics and Human Philosophy</h2>
+            <h2>JP Morgan</h2>
             <h3>2021-2024</h3>
           </div>
         </div>
         <h1 className='font-bold text-2xl mt-4'>Resume</h1>
         <img src="resumepic.png" alt="" className='w-full h-auto mt-2' />
-              <h2 className='text-2xl mt-4'>Supporting Documents</h2>
-               <img src="resumepic.png" alt="" className='w-full h-auto mt-2' />
-              <h2 className='text-2xl mt-4'>Bid Currency</h2>
-         <h2 className='text-2xl mt-4'>$</h2>
-              
+        <h2 className='text-2xl mt-4'>Screening Questions</h2>
+        <div className='mt-2'>
+          <ScreeningB question="Have you completed the following level of Education: Bachelor’s?" answer="Yes" />
+          <ScreeningB question="Have you completed the following level of Education: Bachelor’s?" answer="Yes" />
+          <ScreeningB question="Have you completed the following level of Education: Bachelor’s?" answer="Yes" />
+        </div>
       </div>
     </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ViewBids
+export default SideBySide;

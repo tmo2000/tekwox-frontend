@@ -15,21 +15,22 @@ const ProjectsForm = () => {
     <>
       <div
         className="text-slate-500 text-2xl font-semibold font-['Inter']"
-        onClick={() => setShow(true)}
+       
       >
         Projects
-        <FontAwesomeIcon className="ml-[18rem]" icon={faEdit} />
+        <FontAwesomeIcon className="ml-4 cursor-pointer" icon={faEdit}  onClick={() => setShow(true)} />
       </div>
       <Modal shouldShow={show} onClose={onClose}>
-        <div className=" mt-16 ">
-          <h1 className="text-left ml-16 text-4xl ">Project </h1>
-          <div className="mb-4 ml-16 mt-9">
-            <div>
+        <div className="p-4 sm:p-6 md:p-10 lg:p-16 xl:p-20">
+          <h1 className="text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Project</h1>
+          <div className="mt-6">
+            <div className="mb-4">
               <input
                 type="text"
-                id="country"
-                name="country"
-                className="mt-1 p-2 mb-8 border border-gray-300 rounded-md w-full"
+                id="projectName"
+                name="projectName"
+                placeholder="Project Name"
+                className="mt-1 p-2 border border-gray-300 rounded-md w-full"
               />
             </div>
             <div className="mb-4">
@@ -43,17 +44,19 @@ const ProjectsForm = () => {
                 type="file"
                 id="resume"
                 name="resume"
-                className="mt-1 p-2 border mr-[25rem] border-gray-300 rounded-md w-[40%] h-16"
+                className="mt-1 p-2 border border-gray-300 rounded-md w-full "
                 accept=".pdf, .doc, .docx"
               />
-              <p className="text-sm text-gray-500 mr-[25rem]">
+              <p className="text-sm text-gray-500 mt-1">
                 Attach a PDF or Word document
               </p>
             </div>
           </div>
-          <button className="ml-[30rem] text-[#5D6AA8]" onClick={onClose}>
-            Save
-          </button>
+          <div className="flex justify-end mt-4">
+            <button className="bg-[#5D6AA8] py-2 px-4 rounded-md mt-8 hover:bg-blue-600 text-white" onClick={onClose}>
+              Save
+            </button>
+          </div>
         </div>
       </Modal>
     </>

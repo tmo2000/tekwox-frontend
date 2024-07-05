@@ -1,0 +1,23 @@
+<div>
+          <Box sx={{ width: "100%" }}>
+            <Box
+              className="tab-container"
+              sx={{ borderBottom: 1, borderColor: "divider" }}
+            >
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="basic tabs example"
+              >
+                <Tab label="Jobs" />
+                <Tab label="Projects" />
+              </Tabs>
+            </Box>
+            <CustomTabPanel value={value} index={0}>
+              <ActiveCloseDraft />
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={1}>
+              <ActiveCloseDraftProjects />
+            </CustomTabPanel>
+          </Box>
+        </div>

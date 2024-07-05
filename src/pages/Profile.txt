@@ -1,0 +1,65 @@
+  <div className="self-stretch h-40 px-10 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+                <div className="justify-start items-start gap-6 inline-flex">
+                  <SkillsForm />
+                </div>
+                <div className="self-stretch justify-between items-center inline-flex">
+                  <div className="grow shrink basis-0 h-9 justify-start items-start gap-8 flex">
+                    <div className="w-24 p-2 bg-zinc-100 rounded-2xl border border-neutral-500 border-opacity-50 justify-center items-center gap-2 flex">
+                      <div className="text-black text-xl font-medium font-['Inter']">
+                        Power BI
+                      </div>
+                    </div>
+                    <div className="w-32 p-2 bg-zinc-100 rounded-2xl border border-neutral-500 border-opacity-50 justify-center items-center gap-2 flex">
+                      <div className="text-black text-xl font-medium font-['Inter']">
+                        Leadership
+                      </div>
+                    </div>
+                    <div className="w-60 p-2 bg-zinc-100 rounded-2xl border border-neutral-500 border-opacity-50 justify-center items-center gap-2 flex">
+                      <div className="text-black text-xl font-medium font-['Inter']">
+                        Business Development
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-6 h-6 relative" />
+                </div>
+              </div>
+               <div className="self-stretch h-auto px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+                <div className="justify-start items-start gap-6 inline-flex">
+                  <CertificatesForm />
+                </div>
+                <div className="self-stretch text-left justify-start items-center gap-7 inline-flex">
+                  <div className="w-[100%] grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
+                    <div className="w-[100%] self-stretch justify-start items-start gap-2 inline-flex">
+                      <div className="w-[80%]">
+                        <span className="text-black text-lg font-semibold font-['Inter'] leading-relaxed">
+                          Employee of the Month
+                          <br />
+                        </span>
+                        <span className="text-black text-base font-normal font-['Inter'] leading-normal">
+                          Edge water Solutions
+                          <br />
+                          October 2023
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-6 h-6 relative" />
+                </div>
+              </div>
+              <div className="self-stretch h-auto px-4 py-8 bg-white rounded-2xl border border-zinc-400 border-opacity-75 flex-col justify-start items-start gap-8 flex">
+                <div className="justify-start items-start gap-6 inline-flex">
+                  <ProjectsForm />
+                </div>
+                <div className="self-stretch  text-left justify-between items-center inline-flex">
+                  <div className="grow shrink basis-0 px-px py-2 flex-col justify-start items-start gap-2 inline-flex">
+                    <div className="self-stretch justify-start items-start gap-2 inline-flex">
+                      <div className="grow shrink basis-0 text-black text-base font-normal font-['Inter']">
+                        Projects help you do more of the work you love to do.
+                        Create project offerings that highlight your strengths
+                        and attract more clients.{" "}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-6 h-6 relative" />
+                </div>
+              </div> 

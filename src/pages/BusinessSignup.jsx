@@ -89,143 +89,150 @@ const businessSignup = () => {
 
 
   return (
-    <div>
-      <div>
-        <img src="logo.png" className="w-32 h-auto ml-12 mt-6" />
-        <div className="  border-[3px] border-[#808080] ml-[13rem] mt-14 rounded-2xl p-16 w-[70%] h-[46rem] ">
-          <div>
-            <div className="flex relative">
-              <Link to="/" className="absolute top-1 left-1">
-                <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
-              </Link>
-            </div>
-            <h2 className="text-[#808080] text-center text-2xl font-semibold mb-6">
-              sign up to recruit top talents.
-            </h2>
-            <form onSubmit={handleRegister} className="">
-              <input
-                type="hidden"
-                id="accounttype"
-                name="accounttype"
-                value={data.accounttype}
-                onChange={(e) => setData({ ...data, accounttype: e.target.value })}
-              />
-              <div className="flex">
-                <div className="mr-4 w-1/2">
-                  <input
-                    type="text"
-                    id="firstname"
-                    name="firstname"
-                    value={data.firstname}
-                    className="mt-6 p-2 border border-gray-300 rounded-3xl w-full"
-                    placeholder="First Name"
-                    onChange={(e) => setData({ ...data, firstname: e.target.value })}
-                  />
-                </div>
+  <div className="relative min-h-screen flex flex-col items-center">
+  <img src="logo.png" className="w-32 h-auto mt-6 ml-6 absolute top-0 left-0" />
+  
+  <div className="border-[3px] border-[#808080] mt-24 rounded-2xl p-6 md:p-16 w-[90%] sm:w-[80%] md:w-[70%] h-auto md:h-[46rem] flex flex-col items-center relative">
+    <div className="w-full">
+      <div className="relative flex justify-start mb-4">
+        <Link to="/" className="top-0 left-0">
+          <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
+        </Link>
+      </div>
+      <h2 className="text-[#808080] text-center text-2xl font-semibold mb-6">
+        sign up to recruit top talents.
+      </h2>
+      <form onSubmit={handleRegister} className="w-full">
+        <input
+          type="hidden"
+          id="accounttype"
+          name="accounttype"
+          value={data.accounttype}
+          onChange={(e) => setData({ ...data, accounttype: e.target.value })}
+        />
 
-                <div className="w-1/2">
-                  <input
-                    type="text"
-                    id="lastname"
-                    name="lastname"
-                    value={data.lastname}
-                    className="mt-6 p-2 border border-gray-300 rounded-3xl w-full"
-                    placeholder="Last Name"
-                    onChange={(e) => setData({ ...data, lastname: e.target.value })}
-                  />
-                </div>
-              </div>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                value={data.email}
-                className="mt-6 p-2 border border-gray-300 rounded-3xl w-full"
-                placeholder="Email"
-                onChange={(e) => {
-                  setData({ ...data, email: e.target.value });
-                  setEmailError('');
-                }}
-              />
-              {emailError && <span className="text-red-500">{emailError}</span>}
-              <div className="relative">
-                <input
-                  type={showPassword ? "text" : "password"} // Toggle input type based on showPassword state
-                  id="password"
-                  name="password"
-                  value={data.password}
-                  className="mt-6 p-2 border border-gray-300 rounded-3xl w-full pr-10" // Added padding for icon
-                  placeholder="Password (8 Character)"
-                  onChange={(e) => {
-                    setData({ ...data, password: e.target.value });
-                    setPasswordError('');
-                  }}
-                />
-                <FontAwesomeIcon
-                  icon={showPassword ? faEyeSlash : faEye} // Show/hide eye icon based on showPassword state
-                  className="absolute mt-[.8rem] top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
-                  onClick={togglePasswordVisibility} // Toggle password visibility when eye icon is clicked
-                />
-              </div>
-              {passwordError && <span className="text-red-500">{passwordError}</span>}
-              {/* Password confirmation input with icon and error handling */}
-              <div className="relative">
-                <input
-                  type={showConfirmPassword ? "text" : "password"} // Toggle input type based on showConfirmPassword state
-                  id="password_confirmation"
-                  name="password_confirmation"
-                  value={data.password_confirmation}
-                  className="mt-6 p-2 border border-gray-300 rounded-3xl w-full pr-10" // Added padding for icon
-                  placeholder="Confirm Password"
-                  onChange={(e) => {
-                    setData({ ...data, password_confirmation: e.target.value });
-                    setConfirmPasswordError('');
-                  }}
-                />
-                <FontAwesomeIcon
-                  icon={showConfirmPassword ? faEyeSlash : faEye} // Show/hide eye icon based on showConfirmPassword state
-                  className="absolute mt-[.8rem] top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
-                  onClick={toggleConfirmPasswordVisibility} // Toggle password visibility when eye icon is clicked
-                />
-              </div>
-              {confirmPasswordError && <span className="text-red-500">{confirmPasswordError}</span>}
-              <div className="flex mt-[1.5rem] flex-col items-center">
-                <button
-                  type="submit"
-                  className="flex justify-center items-center bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-1 px-20 rounded-full"
-                >
-                  Sign Up
-                </button>
-              </div>
-            </form>
-            <div className="w-[100%] flex mt-10">
-              <hr className="w-1/2 block" />
-              <span className="mx-4 mb-8">or</span>
-              <hr className="w-1/2 block" />
-            </div>
-            <div className="flex flex-col items-center">
-              {/* Google Sign In Button */}
-              <button className="flex items-center justify-start border font-bold py-2 px-56 rounded-full mb-4">
-                <FontAwesomeIcon icon={faGoogle} className="mr-2" />
-                Sign in with Google
-              </button>
+        <div className="flex flex-col md:flex-row md:space-x-4">
+          <div className="mb-4 md:mb-0 md:w-1/2">
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              value={data.firstname}
+              className="mt-6 p-2 border border-gray-300 rounded-3xl w-full"
+              placeholder="First Name"
+              onChange={(e) => setData({ ...data, firstname: e.target.value })}
+            />
+          </div>
 
-              {/* LinkedIn Sign In Button */}
-              <button className="flex items-center justify-start border font-bold py-2 px-56 rounded-full">
-                <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
-                Sign in with LinkedIn
-              </button>
-              <h3 className="mt-6 text-[#444] text-2xl ">
-                Already have an account ?,{" "}
-                <Link to="/BusinessLogin" className="text-[#5D6AA8]">
-                  Login
-                </Link>{" "}
-              </h3>
-            </div>
+          <div className="md:w-1/2">
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              value={data.lastname}
+              className="mt-6 p-2 border border-gray-300 rounded-3xl w-full"
+              placeholder="Last Name"
+              onChange={(e) => setData({ ...data, lastname: e.target.value })}
+            />
           </div>
         </div>
+
+        <input
+          type="text"
+          id="email"
+          name="email"
+          value={data.email}
+          className="mt-6 p-2 border border-gray-300 rounded-3xl w-full"
+          placeholder="Email"
+          onChange={(e) => {
+            setData({ ...data, email: e.target.value });
+            setEmailError("");
+          }}
+        />
+        {emailError && <span className="text-red-500">{emailError}</span>}
+
+        <div className="relative mt-6">
+          <input
+            type={showPassword ? "text" : "password"}
+            id="password"
+            name="password"
+            value={data.password}
+            className="p-2 border border-gray-300 rounded-3xl w-full pr-10"
+            placeholder="Password (8 Character)"
+            onChange={(e) => {
+              setData({ ...data, password: e.target.value });
+              setPasswordError("");
+            }}
+          />
+          <FontAwesomeIcon
+            icon={showPassword ? faEyeSlash : faEye}
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
+            onClick={togglePasswordVisibility}
+          />
+        </div>
+        {passwordError && <span className="text-red-500">{passwordError}</span>}
+
+        <div className="relative mt-6">
+          <input
+            type={showConfirmPassword ? "text" : "password"}
+            id="password_confirmation"
+            name="password_confirmation"
+            value={data.password_confirmation}
+            className="p-2 border border-gray-300 rounded-3xl w-full pr-10"
+            placeholder="Confirm Password"
+            onChange={(e) => {
+              setData({ ...data, password_confirmation: e.target.value });
+              setConfirmPasswordError("");
+            }}
+          />
+          <FontAwesomeIcon
+            icon={showConfirmPassword ? faEyeSlash : faEye}
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
+            onClick={toggleConfirmPasswordVisibility}
+          />
+        </div>
+        {confirmPasswordError && <span className="text-red-500">{confirmPasswordError}</span>}
+
+        <div className="flex mt-6 flex-col items-center">
+          <button
+            type="submit"
+            className="flex justify-center items-center bg-[#5D6AA8] hover:bg-blue-700 text-white font-bold py-2 px-20 rounded-full"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+
+      <div className="w-full flex items-center mt-10">
+        <hr className="w-1/2" />
+        <span className="mx-4 mb-8">or</span>
+        <hr className="w-1/2" />
+      </div>
+
+      <div className="flex flex-col items-center w-full">
+        {/* Google Sign In Button */}
+        <button className="flex items-center justify-center border font-bold py-2 px-4 rounded-full mb-4 w-[90%] sm:w-[80%] md:w-[70%]">
+          <FontAwesomeIcon icon={faGoogle} className="mr-2" />
+          Sign in with Google
+        </button>
+
+        {/* LinkedIn Sign In Button */}
+        <button className="flex items-center justify-center border font-bold py-2 px-4 rounded-full w-[90%] sm:w-[80%] md:w-[70%]">
+          <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
+          Sign in with LinkedIn
+        </button>
+
+        <h3 className="mt-2 text-[#444] text-2xl text-center">
+          Already have an account?{" "}
+          <Link to="/BusinessLogin" className="text-[#5D6AA8]">
+            Login
+          </Link>
+        </h3>
       </div>
     </div>
+  </div>
+</div>
+
   );
 };
 

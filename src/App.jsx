@@ -31,6 +31,9 @@ import PaymentGateway from "./pages/paymentGateway";
 import PostedProjects from "./pages/postedProjects";
 import ViewApplicants from "./pages/viewApplicants";
 import ViewBids from "./pages/viewbids";
+import SideBySide from "./pages/SideBySide";
+import Stacked from "./pages/Stacked";
+
 
 const App = () => {
   return (
@@ -44,7 +47,7 @@ const App = () => {
         <Route path="/jobseekerlogin" element={<Jobseekerlogin />} />
         <Route path="/buildprofile" element={<Buildprofile />} />
         <Route path="/personal" element={<Personal />} />
-        <Route path="/jobseekerDashboard" element={<JobseekerDashboard />} />
+        <Route path="/jobseekerdashboard" element={<JobseekerDashboard />} />
         <Route path="/jobseekerprofile" element={<Jobseekerprofile />} />
         <Route
           path="/businessbuildprofile"
@@ -72,7 +75,9 @@ const App = () => {
         <Route path="/screenquestions" element={<ScreenQuestions />} />
         <Route path="/postedprojects" element={<PostedProjects />} />
         <Route path="/viewapplicants" element={<ViewApplicants />} />
-        <Route path="/viewbids" element={<ViewBids/>}/>
+        <Route path="/viewbids" element={<ViewBids />} />
+        <Route path="/sidebyside" element={<SideBySide/>}/>
+       <Route path="/stacked" element={<Stacked/>}/>
 
       </Routes>
     </div>

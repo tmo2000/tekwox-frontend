@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import plusIcn from "../assets/ei_plus.svg";
 
-const ScreeningTags = ({ key, label, onClick }) => {
+const ScreeningTags = ({ label, onClick }) => {
   const handleOnClick = () => {
     onClick();
   }
   return (
-    <div key={key} onClick={handleOnClick}>
+    <div onClick={handleOnClick}>
       <div className="text-black font-bold flex items-center rounded-full pl-4 mt-4 border-2 border-black max-w-[13rem] bg-white hover:bg-[#938E8E]">
         <span className="flex items-center">
           {" "}

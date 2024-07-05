@@ -4,9 +4,9 @@ import { faArrowLeft, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import ScreenDraft from "../component/ScreenDraft";
 
-const PostedProjects = () => {
+const Stacked = () => {
   return (
-      <div>
+    <div>
           <div className="flex">
         {/* Left-aligned image */}
         <div>
@@ -27,8 +27,8 @@ const PostedProjects = () => {
         </div>
           </div>
          <div className="relative">
-  <Link to="/businessdashboard" className="mr-[80rem]">
-    <FontAwesomeIcon icon={faArrowLeft} />
+  <Link to="/listedprojects" className="absolute top-0 left-0 mt-1 ml-1">
+    <FontAwesomeIcon icon={faArrowLeft} className="mr-1" />
   </Link>
 </div>
        <div className="flex flex-col lg:flex-row lg:space-x-6">
@@ -190,7 +190,7 @@ const PostedProjects = () => {
                    <Link to="/viewbids" className="">
           <button
             type="button"
-            className="bg-[#5D6AA8] bg-opacity-95 hover:bg-[#5D6AA8] text-white font-bold py-1 px-[2.1rem] rounded-full "
+            className="bg-[#5D6AA8] bg-opacity-95 hover:bg-[#5D6AA8] text-white font-bold py-1 px-[4.3rem] rounded-full "
           >
             View bids
           </button>
@@ -198,7 +198,7 @@ const PostedProjects = () => {
                       <Link to="/businessdashboard">
                       <button
           type="button"
-          className="bg-[#5D6AA8] bg-opacity-95 mt-2 hover:bg-[#5D6AA8] text-white font-bold py-1 px-3 rounded-full "
+          className="bg-[#5D6AA8] bg-opacity-95 mt-2 hover:bg-[#5D6AA8] text-white font-bold py-1 px-12 rounded-full "
         >
           Repost projects
         </button>
@@ -209,7 +209,7 @@ const PostedProjects = () => {
       </div>
     </div>   
     </div>
-  );
-};
+  )
+}
 
-export default PostedProjects;
+export default Stacked

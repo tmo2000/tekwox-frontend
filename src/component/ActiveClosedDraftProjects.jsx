@@ -4,6 +4,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import JobCard from "./JobCard";
+import ProjectCard from "./ProjectCard";
 
 const ActiveCloseDraftProjects = () => {
   const [value, setValue] = React.useState(0);
@@ -32,106 +33,53 @@ const ActiveCloseDraftProjects = () => {
         <CustomTabPanel value={value} index={0}>
           {/* Content for the "Active" tab */}
           <Typography>
-            <JobCard
-              title="Programmable Soft Robotics"
-              applicants="40 applicants"
-              address="Manhanttan, NY, USA"
-              companyName="Fi Cloud inc."
-            />
-            <JobCard
-              title="Project Manager"
-              applicants="2 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree Services"
-            />
-            <JobCard
-              title="IT Manager"
-              applicants="70 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree  Services"
-            />
-            <JobCard
-              title="Web Development Intern"
-              applicants="40 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree  Services"
-            />
-            <JobCard
-              title="Data Scientist"
-              applicants="65 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree  Services"
-            />
+            <ProjectCard projectName='Programmable soft robotics'
+              companyName='Edgewater solutions'
+            Location='Columbia SC'/>
+            <ProjectCard projectName='AI augmented renewable energy'
+              companyName='Agama solutions'
+            Location='United states' />
+            <ProjectCard projectName='Weather forecasting system'
+              companyName='KeyFactor Inc'
+            Location='Atlanta GC'/>
+            <ProjectCard projectName='Data Leakage detection system'
+              companyName='Pheonix services'
+            Location='San Jose'/>
+            
           </Typography>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
           {/* Content for the "Closed" tab */}
           <Typography>
-            <JobCard
-              title="Cloud Engineer"
-              applicants="40 applicants"
-              address="Manhanttan, NY, USA"
-              companyName="Fi Cloud inc."
-            />
-            <JobCard
-              title="Project Manager"
-              applicants="2 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree Services"
-            />
-            <JobCard
-              title="IT Manager"
-              applicants="70 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree  Services"
-            />
-            <JobCard
-              title="Web Development Intern"
-              applicants="40 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree  Services"
-            />
-            <JobCard
-              title="Data Scientist"
-              applicants="65 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree  Services"
-            />
+            <ProjectCard projectName='SAP Project'
+              companyName='Edgewater solutions'
+            Location='Columbia SC'/>
+            <ProjectCard projectName='AI augmented renewable energy'
+              companyName='Agama solutions'
+            Location='United states' />
+            <ProjectCard projectName='Weather forecasting system'
+              companyName='KeyFactor Inc'
+            Location='Atlanta GC'/>
+            <ProjectCard projectName='Data Leakage detection system'
+              companyName='Pheonix services'
+            Location='San Jose'/>
           </Typography>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
           {/* Content for the "Draft" tab */}
           <Typography>
-            <JobCard
-              title="Cloud Engineer"
-              applicants="40 applicants"
-              address="Manhanttan, NY, USA"
-              companyName="Fi Cloud inc."
-            />
-            <JobCard
-              title="Project Manager"
-              applicants="2 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree Services"
-            />
-            <JobCard
-              title="IT Manager"
-              applicants="70 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree  Services"
-            />
-            <JobCard
-              title="Web Development Intern"
-              applicants="40 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree  Services"
-            />
-            <JobCard
-              title="Data Scientist"
-              applicants="65 applicants"
-              address="Ikeja, Lagos, Nigeria"
-              companyName="Ascentree  Services"
-            />
+            <ProjectCard projectName='Programmable soft robotics'
+              companyName='Edgewater solutions'
+            Location='Columbia SC'/>
+            <ProjectCard projectName='AI augmented renewable energy'
+              companyName='Agama solutions'
+            Location='United states' />
+            <ProjectCard projectName='Weather forecasting system'
+              companyName='KeyFactor Inc'
+            Location='Atlanta GC'/>
+            <ProjectCard projectName='Data Leakage detection system'
+              companyName='Pheonix services'
+            Location='San Jose'/>
           </Typography>
         </CustomTabPanel>
       </Box>

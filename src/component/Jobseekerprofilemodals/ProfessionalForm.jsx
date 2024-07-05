@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,49 +13,42 @@ const ProfessionalForm = () => {
 
   return (
     <>
-      <div
-        className="text-slate-500 text-2xl font-semibold font-['Inter']"
-        onClick={() => setShow(true)}
-      >
+      <div className="text-slate-500 text-2xl font-semibold font-['Inter'] cursor-pointer" onClick={() => setShow(true)}>
         Professional Overview
-        <FontAwesomeIcon className="ml-[20rem]" icon={faEdit} />
+        <FontAwesomeIcon className="ml-4" icon={faEdit} />
       </div>
       <Modal shouldShow={show} onClose={onClose}>
-        <div className="mr-10 mt-16 ">
-          <h1 className="text-left ml-16 text-4xl ">Professional Overview </h1>
-          <div className="mb-4 ml-16 mt-9">
-            <div className="mb-2">
-              <label
-                htmlFor="nationality"
-                className="mb-2 block text-left text-sm font-medium text-gray-700"
-              >
-                Role
-              </label>
-              <input
-                type="text"
-                id="nationality"
-                name="nationality"
-                className="mt-1 p-2 mb-8 border border-gray-300 rounded-md w-full"
-                placeholder="What do you do?"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="country"
-                className="mb-2 block text-left text-sm font-medium text-gray-700"
-              >
-                Description
-              </label>
-              <input
-                type="text"
-                id="country"
-                name="country"
-                className="mt-1 p-2 mb-8 border border-gray-300 rounded-md w-full h-14"
-              />
-            </div>
+        <div className="p-8">
+          <h1 className="text-4xl mb-8">Professional Overview</h1>
+          <div className="mb-4">
+            <label htmlFor="role" className="block text-sm font-medium text-gray-700">
+              Role
+            </label>
+            <input
+              type="text"
+              id="role"
+              name="role"
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              placeholder="What do you do?"
+            />
           </div>
-          <button className="ml-[30rem] text-[#5D6AA8]" onClick={onClose}>
+
+          <div className="mb-4">
+            <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+              Description
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              className="mt-1 p-2 border border-gray-300 rounded-md w-full h-32 resize-none"
+              placeholder="Briefly describe your professional overview..."
+            ></textarea>
+          </div>
+
+          <button
+            className="bg-[#5D6AA8] text-white py-2 px-4 rounded-md mt-8 hover:bg-blue-600"
+            onClick={onClose}
+          >
             Save
           </button>
         </div>

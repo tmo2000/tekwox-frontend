@@ -77,63 +77,55 @@ const businessDashboard = () => {
               <FontAwesomeIcon icon={faBell} size="1x" />
             </div>
 
-            {/* Settings Icon */}
             <div>
               <FontAwesomeIcon icon={faCog} size="1x" />
             </div>
           </div>
         </div>
       </nav>
-
-      <div className="flex w-[90%] p-2 pt-20 gap-14">
-        <div className="w-[20rem]   h-[40rem]">
-          <Link to="/businessprofile">
-            <div className="border ml-8 mt-8 rounded-2xl px-4  h-auto text-center items-center">
-              <img
-                src="profile.png"                                                     
-                alt="Another Image"
-                className="w-12 h-auto ml-20 mt-6 items-center"
-              />
-              <h6 className="mb-12">{businessName}</h6>
+<div className="flex flex-col lg:flex-row w-full p-8 lg:p-32 gap-4 lg:gap-24 overflow-x-hidden">
+        <div className="flex flex-col w-full lg:w-[1/2] p-5 gap-6 lg:gap-2 lg:items-start items-center">
+          <div className="flex flex-col items-center">
+            <Link to="/businessprofile">
+              <div className="border rounded-2xl px-[5rem] mt-14 h-auto text-center items-center lg:ml-8 lg:mt-8">
+                <img
+                  src="profile.png"
+                  alt="Profile"
+                  className="w-12 h-auto mx-auto mt-6"
+                />
+                <h6 className="mb-4">{businessName}</h6>
+              </div>
+            </Link>
+            <div className="w-full lg:w-[16rem] mt-4 lg:mt-0 flex items-center justify-center flex-col">
+              <Link to="/postajob">
+                <button className="w-full px-16 py-2 mt-6 bg-[#5d6aa8] text-white font-bold rounded-full hover:bg-white hover:text-[#5d6aa8] hover:border-[#5d6aa8] hover:border">
+                  Post a Job
+                </button>
+              </Link>
+              <Link to="/postaproject">
+                <button className="w-full px-14 py-2 mt-4 border-[#5d6aa8] border text-[#5d6aa8] font-bold rounded-full hover:bg-[#5d6aa8] hover:text-white">
+                  Post a Project
+                </button>
+              </Link>
             </div>
-          </Link>
-
-          <Link to="/postajob">
-            <button className="px-16 py-2 mt-6 bg-[#5d6aa8] text-white font-bold rounded-full hover:bg-white hover:text-[#5d6aa8] hover:border-[#5d6aa8] hover:border">
-              Post a Job
-            </button>
-          </Link>
-
-          <Link to="/postaproject">
-            <button className="px-14 py-2 mt-6 border-[#5d6aa8] border text-[#5d6aa8] font-bold rounded-full hover:bg-[#5d6aa8] hover:text-white">
-              Post a Project
-            </button>
-          </Link>
-          <div className="mt-9 w-[15rem] ml-7">
-            <div className="w-[15rem] h-auto py-10 bg-white rounded-2xl border border-zinc-400 flex-col justify-start items-start gap-6 inline-flex">
-              <p>
-                Businesses can also bid for projects of their choice. See a list
-                of projects up for bidding.
+          </div>
+          <div className="w-full lg:w-[20rem] mt-9 flex items-center justify-center">
+            <div className="py-10 bg-white rounded-2xl border border-zinc-400 flex-col justify-start items-start gap-6">
+              <p className="px-5 text-center lg:text-left">
+                Businesses can also bid for projects of their choice. See a list of projects up for bidding.
               </p>
               <Link to="/listedprojects">
-                <button className="px-10 ml-5 py-2 mt-6 bg-[#5d6aa8] text-white font-bold rounded-full hover:bg-white hover:text-[#5d6aa8] hover:border-[#5d6aa8] hover:border">
+                <button className="w-[80%] mx-auto ml-8 lg:ml-8 px-6 py-2 mt-6 bg-[#5d6aa8] text-white font-bold rounded-full hover:bg-white hover:text-[#5d6aa8] hover:border-[#5d6aa8] hover:border">
                   Listed Projects
                 </button>
               </Link>
             </div>
           </div>
         </div>
-        <div>
+        <div className="w-full lg:w-[1/2] flex items-center justify-center">
           <Box sx={{ width: "100%" }}>
-            <Box
-              className="tab-container"
-              sx={{ borderBottom: 1, borderColor: "divider" }}
-            >
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                aria-label="basic tabs example"
-              >
+            <Box className="tab-container" sx={{ borderBottom: 1, borderColor: "divider" }}>
+              <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                 <Tab label="Jobs" />
                 <Tab label="Projects" />
               </Tabs>
@@ -147,6 +139,7 @@ const businessDashboard = () => {
           </Box>
         </div>
       </div>
+    
     </div>
   );
 };

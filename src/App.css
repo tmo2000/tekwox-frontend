@@ -1,8 +1,6 @@
 #root {
-  max-width: 1280px;
+  max-width: full;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -54,3 +52,4 @@
   transition: color 0.3s ease-in, border-bottom .5s ease-in;
 
 }
+
