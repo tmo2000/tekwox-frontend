@@ -34,12 +34,12 @@ import ViewBids from "./pages/viewbids";
 import SideBySide from "./pages/SideBySide";
 import Stacked from "./pages/Stacked";
 
-
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/homeUpdate" element= {<homeUpdate/>}/>
         <Route path="/signup" element={<Signup />} />
         <Route path="/businesssignup" element={<BusinessSignup />} />
         <Route path="/jobseekersignup" element={<Jobseekersignup />} />
@@ -78,7 +78,6 @@ const App = () => {
         <Route path="/viewbids" element={<ViewBids />} />
         <Route path="/sidebyside" element={<SideBySide/>}/>
        <Route path="/stacked" element={<Stacked/>}/>
-
       </Routes>
     </div>
   );
