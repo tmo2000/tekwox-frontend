@@ -1,6 +1,6 @@
 import { } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+//import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import BusinessSignup from "./pages/BusinessSignup";
 import Jobseekersignup from "./pages/Jobseekersignup";
@@ -33,13 +33,14 @@ import ViewApplicants from "./pages/viewApplicants";
 import ViewBids from "./pages/viewbids";
 import SideBySide from "./pages/SideBySide";
 import Stacked from "./pages/Stacked";
+import HomeUpdate from "./pages/homeUpdate"
 
 const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/homeUpdate" element= {<homeUpdate/>}/>
+        <Route path="/" element={<HomeUpdate />} />
+        {/* <Route path="/homeUpdate" element= {<HomeUpdate/>}/> */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/businesssignup" element={<BusinessSignup />} />
         <Route path="/jobseekersignup" element={<Jobseekersignup />} />
