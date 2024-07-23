@@ -5,7 +5,7 @@ const HomeUpdate = () => {
   return (
     <div>
          <Navbar />
-      <div className="bg-[#c4cee9] flex flex-col items-center justify-center min-h-1/2">
+      <div className="bg-[#c4cee9] flex flex-col items-center justify-center min-h-screen">
         <div className="bg-[#5d6aa8] p-20 px-[4rem] rounded-md shadow-md text-center w-[70%] mb-8">
           <h1 className="text-white text-3xl mb-12">Find Your Dream Job</h1>
           <form className="flex justify-between gap-4">
