@@ -4,7 +4,7 @@ import { faGoogle, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-
+import axios from 'axios';
 
 const Jobseekersignup = () => {
   const [data, setData] = useState({
@@ -19,66 +19,24 @@ const Jobseekersignup = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const history = useNavigate ();
+  const navigate = useNavigate();
+
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://tekwox.com/api/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-  
-      if (response.status === 201) {
-        const responseData = await response.json();
-        const serializedData = JSON.stringify(responseData);
-        document.cookie = `Tekwox=${encodeURIComponent(serializedData)}; expires=Thu, 18 Dec 2030 12:00:00 UTC; path=/`;
-        
-        // After successful registration, proceed with login
-        const loginResponse = await fetch('https://tekwox.com/api/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            email: data.email,
-            password: data.password
-          })
-        });
-  
-        if (loginResponse.status === 200) {
-          // Login successful, handle accordingly (e.g., store session/token)
-          const loginData = await loginResponse.json();
-          // Store session/token or perform further actions
-          console.log('Login successful:', loginData);
-          history('/buildprofile');
-        } else {
-          // Handle login failure
-          console.log('Login failed');
-        }
-      } else {
-        // Handle registration failure
-        const errorData = await response.json();
-        if (errorData.status === 'failed' && errorData.message === 'Validation Error!') {
-          if (errorData.data && errorData.data.email) {
-            setEmailError(errorData.data.email[0]);
-          }
-          if (errorData.data && errorData.data.password) {
-            setPasswordError(errorData.data.password[0]);
-          }
-        } else {
-          console.log('Unexpected error:', errorData);
-        }
-      }
-    } catch (error) {
-      console.log('Error message:', error);
-    }
+      const response = await axios.post('https://tekwox.com/api/register', data);
+      // Store the session/token
+      localStorage.setItem('token', response.data.token);
+      alert('Registration successful!');
+  } catch (error) {
+      console.error('Registration failed:', error);
+      alert('Registration failed. Please try again.');
+  }
   };
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -86,7 +44,6 @@ const Jobseekersignup = () => {
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
-
 
   return (
 <div className="relative min-h-screen flex flex-col items-center">

@@ -34,6 +34,7 @@ import ViewBids from "./pages/viewbids";
 import SideBySide from "./pages/SideBySide";
 import Stacked from "./pages/Stacked";
 import HomeUpdate from "./pages/homeUpdate"
+import PrivateRoute from '../src/component/PrivateRoute';
 
 const App = () => {
   return (
@@ -46,39 +47,68 @@ const App = () => {
         <Route path="/jobseekersignup" element={<Jobseekersignup />} />
         <Route path="/businesslogin" element={<BusinessLogin />} />
         <Route path="/jobseekerlogin" element={<Jobseekerlogin />} />
-        <Route path="/buildprofile" element={<Buildprofile />} />
-        <Route path="/personal" element={<Personal />} />
-        <Route path="/jobseekerdashboard" element={<JobseekerDashboard />} />
-        <Route path="/jobseekerprofile" element={<Jobseekerprofile />} />
+        <Route 
+          path="/buildprofile" 
+          element={
+            <PrivateRoute>
+              <Buildprofile />
+            </PrivateRoute>
+          } 
+        />        <Route path="/personal" element={
+          <PrivateRoute>
+             <Personal />
+          </PrivateRoute>
+       
+        } />
+        <Route path="/jobseekerdashboard"
+         element={
+          <PrivateRoute> 
+           <JobseekerDashboard />
+          </PrivateRoute>
+        
+         } />
+        <Route path="/jobseekerprofile" 
+        element={
+          <PrivateRoute>
+            <Jobseekerprofile />
+          </PrivateRoute>
+        } />
         <Route
           path="/businessbuildprofile"
-          element={<Businessbuildprofile />}
+          element={ 
+          <PrivateRoute>
+            <Businessbuildprofile />
+          </PrivateRoute>}
         />
-        <Route path="/businessdashboard" element={<BusinessDashboard />} />
-        <Route path="/listedprojects" element={<ListedProjects />} />
-        <Route path="/postajob" element={<PostAJob />} />
-        <Route path="/postaproject" element={<PostAProject />} />
-        <Route path="/businessprofile" element={<BusinessProfile />} />
-        <Route path="/jobdescription" element={<JobDescription />} />
-        <Route path="/screeningquestions" element={<ScreeningQuestions />} />
+        <Route path="/businessdashboard" 
+        element={
+          <PrivateRoute>
+           <BusinessDashboard />
+          </PrivateRoute>} />
+        <Route path="/listedprojects" element={<PrivateRoute><ListedProjects /></PrivateRoute>} />
+        <Route path="/postajob" element={<PrivateRoute><PostAJob /></PrivateRoute>} />
+        <Route path="/postaproject" element={<PrivateRoute> <PostAProject /></PrivateRoute>} />
+        <Route path="/businessprofile" element={<PrivateRoute><BusinessProfile /></PrivateRoute>} />
+        <Route path="/jobdescription" element={<PrivateRoute><JobDescription /></PrivateRoute>} />
+        <Route path="/screeningquestions" element={<PrivateRoute><ScreeningQuestions /></PrivateRoute>} />
         <Route
           path="/listedprojectdetails"
-          element={<ListedProjectDetails />}
+          element={<PrivateRoute><ListedProjectDetails /></PrivateRoute>}
         />
-        <Route path="/bidproject" element={<BidProject />} />
-        <Route path="/thank" element={<Thank />} />
-        <Route path="/jobdetails" element={<JobDetails />} />
-        <Route path="/viewjob" element={<ViewJob />} />
-        <Route path="/paymentgateway" element={<PaymentGateway />} />
-        <Route path="/applyforjob" element={<ApplyForJob />} />
-        <Route path="/seemore" element={<SeeMore />} />
-        <Route path="/postedjob" element={<PostedJob />} />
-        <Route path="/screenquestions" element={<ScreenQuestions />} />
-        <Route path="/postedprojects" element={<PostedProjects />} />
-        <Route path="/viewapplicants" element={<ViewApplicants />} />
-        <Route path="/viewbids" element={<ViewBids />} />
-        <Route path="/sidebyside" element={<SideBySide/>}/>
-       <Route path="/stacked" element={<Stacked/>}/>
+        <Route path="/bidproject" element={<PrivateRoute><BidProject /></PrivateRoute>} />
+        <Route path="/thank" element={<PrivateRoute><Thank /></PrivateRoute>} />
+        <Route path="/jobdetails" element={<PrivateRoute><JobDetails /></PrivateRoute>} />
+        <Route path="/viewjob" element={<PrivateRoute><ViewJob /></PrivateRoute>} />
+        <Route path="/paymentgateway" element={<PrivateRoute><PaymentGateway /></PrivateRoute>} />
+        <Route path="/applyforjob" element={<PrivateRoute><ApplyForJob /></PrivateRoute>} />
+        <Route path="/seemore" element={<PrivateRoute><SeeMore /></PrivateRoute>} />
+        <Route path="/postedjob" element={<PrivateRoute><PostedJob /></PrivateRoute>} />
+        <Route path="/screenquestions" element={<PrivateRoute><ScreenQuestions /></PrivateRoute>} />
+        <Route path="/postedprojects" element={<PrivateRoute><PostedProjects /></PrivateRoute>} />
+        <Route path="/viewapplicants" element={<PrivateRoute><ViewApplicants /></PrivateRoute>} />
+        <Route path="/viewbids" element={<PrivateRoute><ViewBids /></PrivateRoute>} />
+        <Route path="/sidebyside" element={<PrivateRoute><SideBySide/></PrivateRoute>}/>
+       <Route path="/stacked" element={<PrivateRoute><Stacked/></PrivateRoute>}/>
       </Routes>
     </div>
   );
