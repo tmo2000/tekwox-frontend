@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useEmail } from '../component/emailStore';
 
 import { faGoogle, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,10 +11,16 @@ const Jobseekerlogin = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [error, setError] = useState('');
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Clear previous error messages
+    setEmailError('');
+    setPasswordError('');
+    setError('');
+
     try {
       const response = await fetch('https://tekwox.com/api/login', {
         method: 'POST',
@@ -21,15 +28,15 @@ const Jobseekerlogin = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email: email,
-          password: password
+          email,
+          password
         })
       });
 
       if (response.ok) {
         const responseData = await response.json();
         console.log('User data:', responseData.data.user);
-        
+
         const { firstname, lastname, email, accounttype } = responseData.data.user;
         console.log('Firstname:', firstname);
         console.log('Lastname:', lastname);
@@ -37,12 +44,14 @@ const Jobseekerlogin = () => {
         console.log('Account Type:', accounttype);
 
         // Store user data in session storage
-  sessionStorage.setItem('userData', JSON.stringify(responseData.data.user));
+        localStorage.setItem('userData', JSON.stringify(responseData.data.user));
+        localStorage.setItem('authToken', responseData.data.token);
   
+
         if (accounttype === 'Personal') {
-          history('/jobseekerDashboard');
+          navigate('/jobseekerdashboard');
         } else if (accounttype === 'Business') {
-          history('/businessDashboard');
+          navigate('/businessdashboard');
         } else {
           console.log('Unknown account type:', accounttype);
           setError('Unknown account type');
@@ -67,7 +76,6 @@ const Jobseekerlogin = () => {
       setError('Incorrect Email or Password');
     }
   };
-
   return (
 <div className="relative min-h-screen flex flex-col items-center">
   <img src="logo.png" className="w-32 h-auto mt-6 ml-6 absolute top-0 left-0" />
@@ -83,8 +91,8 @@ const Jobseekerlogin = () => {
     {/* Form with Email, Password, and Button */}
     <form onSubmit={handleSubmit} className="text-center w-[80%] sm:w-[70%] md:w-[60%]">
       {error && <span className="text-red-500 mb-4">{error}</span>}
-      {emailError && <span className="text-red-500 mb-4">{emailError}</span>}
-      {passwordError && <span className="text-red-500 mb-4">{passwordError}</span>}
+      
+     
 
       <div className="mb-4">
         <input
@@ -96,7 +104,9 @@ const Jobseekerlogin = () => {
           className="mt-1 p-2 border border-gray-300 rounded-3xl w-full"
           placeholder="Username or Email"
         />
+        {emailError && <span className="text-red-500 mb-4">{emailError}</span>}
       </div>
+
 
       <div className="mb-8">
         <input
@@ -108,6 +118,7 @@ const Jobseekerlogin = () => {
           className="mt-1 p-2 border border-gray-300 rounded-3xl w-full"
           placeholder="Password (8 characters)"
         />
+         {passwordError && <span className="text-red-500 mb-4">{passwordError}</span>}
       </div>
       <button
         type="submit"

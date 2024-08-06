@@ -24,17 +24,58 @@ const Jobseekersignup = () => {
 
   const navigate = useNavigate();
 
+  const handleChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value
+    });
+  };
+
   const handleRegister = async (e) => {
     e.preventDefault();
+
+    // Clear previous error messages
+    setEmailError('');
+    setPasswordError('');
+    setConfirmPasswordError('');
+
+    // Validate form data
+    if (data.password !== data.password_confirmation) {
+      setConfirmPasswordError('Passwords do not match.');
+      return;
+    }
+
     try {
-      const response = await axios.post('https://tekwox.com/api/register', data);
+      // Register the user
+      await axios.post('https://tekwox.com/api/register', data);
+      
+      // Automatically log in the user
+      const loginResponse = await axios.post('https://tekwox.com/api/login', {
+        email: data.email,
+        password: data.password
+      });
+      
       // Store the session/token
-      localStorage.setItem('token', response.data.token);
-      alert('Registration successful!');
-  } catch (error) {
-      console.error('Registration failed:', error);
-      alert('Registration failed. Please try again.');
-  }
+      localStorage.setItem('token', loginResponse.data.token);
+      alert('Registration and login successful!');
+      
+      // Redirect to the dashboard or home page
+      navigate('/buildprofile'); // Adjust the route as needed
+    } catch (error) {
+      if (error.response && error.response.data) {
+        // Handle specific error messages from backend
+        const { errors } = error.response.data;
+        if (errors.email) {
+          setEmailError(errors.email[0]);
+        }
+        if (errors.password) {
+          setPasswordError(errors.password[0]);
+        }
+      } else {
+        console.error('Registration or login failed:', error);
+        alert('Registration or login failed. Please try again.');
+      }
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -75,7 +116,8 @@ const Jobseekersignup = () => {
               name="firstname"
               className="mt-6 p-2 border border-gray-300 rounded-3xl w-full"
               placeholder="First Name"
-              onChange={(e) => setData({ ...data, firstname: e.target.value })}
+              value={data.firstname}
+              onChange={handleChange}
             />
           </div>
 
@@ -86,7 +128,8 @@ const Jobseekersignup = () => {
               name="lastname"
               className="mt-6 p-2 border border-gray-300 rounded-3xl w-full"
               placeholder="Last Name"
-              onChange={(e) => setData({ ...data, lastname: e.target.value })}
+              value={data.lastname}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -95,15 +138,12 @@ const Jobseekersignup = () => {
           type="text"
           id="email"
           name="email"
-          value={data.email}
           className="mt-6 p-2 border border-gray-300 rounded-3xl w-full"
           placeholder="Email"
-          onChange={(e) => {
-            setData({ ...data, email: e.target.value });
-            setEmailError("");
-          }}
+          value={data.email}
+          onChange={handleChange}
         />
-        {emailError && <span className="text-red-500">{emailError}</span>}
+         {emailError && <div style={{ color: 'red' }}>{emailError}</div>}
 
         <div className="relative mt-6">
           <input
@@ -113,10 +153,9 @@ const Jobseekersignup = () => {
             value={data.password}
             className="p-2 border border-gray-300 rounded-3xl w-full pr-10"
             placeholder="Password (8 Character)"
-            onChange={(e) => {
-              setData({ ...data, password: e.target.value });
-              setPasswordError("");
-            }}
+            
+            onChange={handleChange}
+            
           />
           <FontAwesomeIcon
             icon={showPassword ? faEyeSlash : faEye}
@@ -124,7 +163,7 @@ const Jobseekersignup = () => {
             onClick={togglePasswordVisibility}
           />
         </div>
-        {passwordError && <span className="text-red-500">{passwordError}</span>}
+        {passwordError && <div style={{ color: 'red' }}>{passwordError}</div>}
 
         <div className="relative mt-6">
           <input
@@ -134,10 +173,8 @@ const Jobseekersignup = () => {
             value={data.password_confirmation}
             className="p-2 border border-gray-300 rounded-3xl w-full pr-10"
             placeholder="Confirm Password"
-            onChange={(e) => {
-              setData({ ...data, password_confirmation: e.target.value });
-              setConfirmPasswordError("");
-            }}
+           
+            onChange={handleChange}
           />
           <FontAwesomeIcon
             icon={showConfirmPassword ? faEyeSlash : faEye}
@@ -145,7 +182,7 @@ const Jobseekersignup = () => {
             onClick={toggleConfirmPasswordVisibility}
           />
         </div>
-        {confirmPasswordError && <span className="text-red-500">{confirmPasswordError}</span>}
+        {confirmPasswordError && <div style={{ color: 'red' }}>{confirmPasswordError}</div>}
 
         <div className="flex mt-6 flex-col items-center">
           <button

@@ -8,42 +8,42 @@ import { Link } from "react-router-dom";
 
 const buildprofile = () => {
   
-  const cookieName = 'Tekwox'; // Name of the cookie
-const decodedCookie = decodeURIComponent(document.cookie); // Decode the cookie string
-const cookieArray = decodedCookie.split(';'); // Split the cookie string into an array
+//   const cookieName = 'Tekwox'; // Name of the cookie
+// const decodedCookie = decodeURIComponent(document.cookie); // Decode the cookie string
+// const cookieArray = decodedCookie.split(';'); // Split the cookie string into an array
 
-// Loop through each cookie to find the one we're interested in
-let cookieValue = '';
-for (let i = 0; i < cookieArray.length; i++) {
-  let cookie = cookieArray[i];
-  while (cookie.charAt(0) === ' ') {
-    cookie = cookie.substring(1);
-  }
-  if (cookie.indexOf(cookieName + '=') === 0) {
-    cookieValue = cookie.substring(cookieName.length + 1);
-    break;
-  }
-}
+// // Loop through each cookie to find the one we're interested in
+// let cookieValue = '';
+// for (let i = 0; i < cookieArray.length; i++) {
+//   let cookie = cookieArray[i];
+//   while (cookie.charAt(0) === ' ') {
+//     cookie = cookie.substring(1);
+//   }
+//   if (cookie.indexOf(cookieName + '=') === 0) {
+//     cookieValue = cookie.substring(cookieName.length + 1);
+//     break;
+//   }
+// }
 
-if (cookieValue) {
-  // Log the cookie value in JSON format
-  console.log('Cookie data:', cookieValue);
+// if (cookieValue) {
+//   // Log the cookie value in JSON format
+//   console.log('Cookie data:', cookieValue);
 
-  // Parse the JSON string stored in the cookie
-  const parsedData = JSON.parse(cookieValue);
+//   // Parse the JSON string stored in the cookie
+//   const parsedData = JSON.parse(cookieValue);
 
-  // Access the user object within the data object
-  const userData = parsedData.data.user;
+//   // Access the user object within the data object
+//   const userData = parsedData.data.user;
 
-  // Access the user's first name from the user object
-  if (userData.firstname) {
-    console.log('User first name:', userData.firstname);
-  } else {
-    console.log('User first name not found in cookie data.');
-  }
-} else {
-  console.log('Cookie not found or data not set.');
-}
+//   // Access the user's first name from the user object
+//   if (userData.firstname) {
+//     console.log('User first name:', userData.firstname);
+//   } else {
+//     console.log('User first name not found in cookie data.');
+//   }
+// } else {
+//   console.log('Cookie not found or data not set.');
+// }
 
 
 
@@ -56,22 +56,16 @@ if (cookieValue) {
   {/* First div with buttons */}
   <div className="text-center md:text-left mb-12 md:ml-44">
     {/* Conditional greeting */}
-    {cookieValue ? (
-      (() => {
-        // Parse the JSON string stored in the cookie
-        const parsedData = JSON.parse(cookieValue);
-        // Access the user object within the data object
-        const userData = parsedData.data.user;
-        return (
+    
           <h2 className="font-bold text-3xl mb-4 md:mb-12">
-            <span>Welcome, {userData.firstname}</span>
+            <span>Welcome, </span>
             <br /> Build your profile
           </h2>
-        );
-      })()
-    ) : (
+        
+      
+    
       <h2 className="font-bold text-3xl mb-4 md:mb-12">Welcome, Build your profile</h2>
-    )}
+    
 
     {/* LinkedIn button */}
     <button className="border bg-[#D9D9D9] hover:bg-blue-700 font-bold py-2 px-28 rounded-full flex items-center mb-4 md:mb-0">
