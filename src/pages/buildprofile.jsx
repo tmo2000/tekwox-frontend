@@ -2,13 +2,22 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom"; 
-
-
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 
 const buildprofile = () => {
-  
-  const cookieName = 'Tekwox'; // Name of the cookie
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      // Redirect to login if not authenticated
+      navigate('/login');
+    }
+  }, [navigate]);
+
+/*const cookieName = 'Tekwox'; // Name of the cookie
 const decodedCookie = decodeURIComponent(document.cookie); // Decode the cookie string
 const cookieArray = decodedCookie.split(';'); // Split the cookie string into an array
 
@@ -45,7 +54,7 @@ if (cookieValue) {
   console.log('Cookie not found or data not set.');
 }
 
-
+*/
 
 
 

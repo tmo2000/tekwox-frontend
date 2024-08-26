@@ -31,6 +31,7 @@ const Jobseekersignup = () => {
       // Store the session/token
       localStorage.setItem('token', response.data.token);
       alert('Registration successful!');
+      navigate('/buildprofile'); // Navigate to a different page after successful login
   } catch (error) {
       console.error('Registration failed:', error);
       alert('Registration failed. Please try again.');

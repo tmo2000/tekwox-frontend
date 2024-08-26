@@ -3,18 +3,40 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import { faGoogle, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import axios from 'axios';
+
+
 const Jobseekerlogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [error, setError] = useState('');
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    const data = {
+      email,
+      password,
+    };
+  
     try {
+      const response = await axios.post('https://tekwox.com/api/login', data);
+  
+      // Store the session/token
+      localStorage.setItem('token', response.data.token);
+  
+      alert('Login successful!');
+      navigate('/buildprofile'); // Navigate to the desired page after login
+    } catch (error) {
+      console.error('Login failed:', error);
+      alert('Login failed. Please try again.');
+    }
+  };  
+    /*
       const response = await fetch('https://tekwox.com/api/login', {
         method: 'POST',
         headers: {
@@ -62,13 +84,9 @@ const Jobseekerlogin = () => {
           setPasswordError('');
         }
       }
-    } catch (error) {
-      console.error('Error:', error);
-      setError('Incorrect Email or Password');
-    }
-  };
+    */
 
-  return (
+return (
 <div className="relative min-h-screen flex flex-col items-center">
   <img src="logo.png" className="w-32 h-auto mt-6 ml-6 absolute top-0 left-0" />
   <div className="border-[3px] border-[#808080] mt-24 rounded-2xl p-6 md:p-16 w-[90%] sm:w-[80%] md:w-[60%] h-auto md:h-[40rem] border-1 border-solid flex flex-col items-center relative">
