@@ -45,9 +45,6 @@ const cookieArray = decodedCookie.split(';'); // Split the cookie string into an
 //   console.log('Cookie not found or data not set.');
 // }
 
-*/
-
-
 
   return (
     <div>
