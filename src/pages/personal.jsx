@@ -5,10 +5,43 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faPaperclip } from "@fortawesome/free-solid-svg-icons";
 import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+
 
 
 
 const Personal = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      // Get the token from localStorage
+      const token = localStorage.getItem('authToken');
+
+      // Send a request to the logout endpoint
+      await axios.post(
+        'https://tekwox.com/api/logout',
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+
+      // Clear the token and user data from localStorage
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('userData');
+
+      // Redirect to the login page
+      navigate('/jobseekerlogin');
+    } catch (error) {
+      console.error('Error logging out:', error);
+      // Handle error appropriately
+    }
+  };
+
+
   const [toggle, setToggle] = useState(1);
   function updateToggle(id) {
     setToggle(id);
@@ -23,7 +56,7 @@ const Personal = () => {
   const [companyname, setCompanyname] = useState('');
   const [jobtitle, setJobtitle] = useState('');
   const [jobdescription, setJobdescription] = useState('');
-  const [activework, setActivework] = useState('');
+  const [activework, setActivework] = useState(false);
   const [startdate, setStartdate] = useState('');
   const [enddate, setEnddate] = useState('');
 
@@ -31,14 +64,13 @@ const Personal = () => {
   const [degree, setDegree] = useState('');
   const [fos, setFos] = useState('');
 
-
   const [certtitle, setCerttitle] = useState('');
   const [institution, setInstitution] = useState('');
 
   const [skill, setSkill] = useState('');
   const [level, setLevel] = useState('');
 
-  const history = useNavigate ();
+  const history = useNavigate();
 
   useEffect(() => {
     const cookieName = 'Tekwox'; // Name of the cookie
@@ -68,163 +100,88 @@ const Personal = () => {
     getEmailFromCookie();
   }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (url, data) => {
     try {
-      const response = await fetch('https://tekwox.com/api/personaldetails', {
+      const response = await fetch(url, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          email: email,
-          bio: bio,
-          nationality: nationality,
-          country: country
-        })
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
-        // Handle successful submission
-        console.log('Form submitted successfully');
+        console.log(`${url} submitted successfully`);
+        if (url.includes('skill')) {
+          history('/jobseekerDashboard');
+        }
       } else {
-        // Handle submission failure
-        console.error('Failed to submit form');
-        setError('Failed to submit form. Please try again.');
+        console.error(`Failed to submit ${url}`);
+        setError(`Failed to submit ${url}. Please try again.`);
       }
     } catch (error) {
       console.error('Error:', error);
-      setError('An error occurred while submitting the form.');
+      setError(`An error occurred while submitting ${url}.`);
     }
   };
-  const workExperienceSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('https://tekwox.com/api/workexperience', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email,
-          companyname: companyname,
-          jobtitle: jobtitle,
-          jobdescription: jobdescription,
-          activework: activework,
-          startdate: startdate,
-          enddate: enddate
-        })
-      });
 
-      if (response.ok) {
-        // Handle successful submission
-        console.log('work experience submitted successfully');
-      } else {
-        // Handle submission failure
-        console.error('Failed to submit form');
-        setError('Failed to submit form. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setError('An error occurred while submitting the form.');
-    }
-  };
-  const education = async (e) => {
+  const handlePersonalDetailsSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('https://tekwox.com/api/education', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email,
-          school: school,
-          degree: degree,
-          fos: fos,
-         
-          startdate: startdate,
-          enddate: enddate
-        })
-      });
-
-      if (response.ok) {
-        // Handle successful submission
-        console.log('education submitted successfully');
-      } else {
-        // Handle submission failure
-        console.error('Failed to submit form');
-        setError('Failed to submit form. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setError('An error occurred while submitting the form.');
-    }
+    handleSubmit('https://tekwox.com/api/personaldetails', {
+      email,
+      bio,
+      nationality,
+      country,
+    });
   };
-  const certificate = async (e) => {
+
+  const handleWorkExperienceSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('https://tekwox.com/api/certificate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email,
-          certtitle: certtitle,
-          institution: institution,
-          
-        })
-      });
-
-      if (response.ok) {
-        // Handle successful submission
-        console.log('Certificate submitted successfully');
-      } else {
-        // Handle submission failure
-        console.error('Failed to submit form');
-        setError('Failed to submit form. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setError('An error occurred while submitting the form.');
-    }
+    handleSubmit('https://tekwox.com/api/workexperience', {
+      email,
+      companyname,
+      jobtitle,
+      jobdescription,
+      activework,
+      startdate,
+      enddate,
+    });
   };
-  const skills = async (e) => {
+
+  const handleEducationSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('https://tekwox.com/api/skill', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email,
-          skill: skill,
-          level: level,
-          
-        })
-      });
-
-      if (response.ok) {
-        // Handle successful submission
-        console.log('skill details submitted successfully');
-        history('/jobseekerDashboard');
-      } else {
-        // Handle submission failure
-        console.error('Failed to submit form');
-        setError('Failed to submit form. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setError('An error occurred while submitting the form.');
-    }
+    handleSubmit('https://tekwox.com/api/education', {
+      email,
+      school,
+      degree,
+      fos,
+      startdate,
+      enddate,
+    });
   };
-  
+
+  const handleCertificateSubmit = (e) => {
+    e.preventDefault();
+    handleSubmit('https://tekwox.com/api/certificate', {
+      email,
+      certtitle,
+      institution,
+    });
+  };
+
+  const handleSkillSubmit = (e) => {
+    e.preventDefault();
+    handleSubmit('https://tekwox.com/api/skill', {
+      email,
+      skill,
+      level,
+    });
+  };
+
   const [showCard, setShowCard] = useState(false);
 
   const toggleCard = () => {
-    setShowCard(prevState => !prevState);
+    setShowCard((prevState) => !prevState);
   };
 
   // API CALL FOR COUNTRY
@@ -290,11 +247,11 @@ const Personal = () => {
         {showCard && (
           <div className="absolute right-0 mt-2 w-48 sm:w-60 md:w-72 bg-white shadow-md rounded-md">
             <ul className="list-none text-left">
-              <li className="py-2 px-4 cursor-pointer hover:bg-gray-100 flex items-center border-b border-gray-300">
+              <li className="py-2 px-4 cursor-pointer hover:bg-gray-100 flex items-center border-b border-gray-300" >
                 <FontAwesomeIcon icon={faUser} className="mr-2" />
                 My Profile
               </li>
-              <li className="py-2 px-4 cursor-pointer hover:bg-gray-100 flex items-center border-b border-gray-300">
+              <li className="py-2 px-4 cursor-pointer hover:bg-gray-100 flex items-center border-b border-gray-300"  onClick={handleLogout}>
                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
                 Logout
               </li>
@@ -340,7 +297,7 @@ const Personal = () => {
 
         <div className="w-[60%]">
           <div className={toggle === 1 ? "show-content" : "content"}>
-  <form onSubmit={handleSubmit}>
+  <form onSubmit={handlePersonalDetailsSubmit}>
     <div className="ml-3 mt-16 sm:ml-6 md:ml-12">
       <h1 className="text-left ml-0 sm:ml-4 md:ml-16 text-2xl sm:text-3xl md:text-4xl">Personal</h1>
       <div className="mb-4 ml-0 sm:ml-4 md:ml-16 mt-9">
@@ -455,7 +412,7 @@ const Personal = () => {
 </div>
 
          <div className={toggle === 2 ? "show-content" : "content"}>
-  <form onClick={workExperienceSubmit}>
+  <form onClick={handleWorkExperienceSubmit}>
     <div className="ml-3 mt-16 sm:ml-6 md:ml-12">
       <h1 className="text-left ml-0 sm:ml-4 md:ml-16 text-2xl sm:text-3xl md:text-4xl">Work Experience</h1>
       <div className="mb-4 ml-0 sm:ml-4 md:ml-16 mt-9">
@@ -597,7 +554,7 @@ const Personal = () => {
 </div>
 
           <div className={toggle === 3 ? "show-content" : "content"}>
-  <form onClick={education}>
+  <form onClick={handleEducationSubmit}>
     <div className="ml-3 mt-16 sm:ml-6 md:ml-12">
       <h1 className="text-left ml-0 sm:ml-4 md:ml-16 text-2xl sm:text-3xl md:text-4xl">Education</h1>
       <div className="mb-4 ml-0 sm:ml-4 md:ml-16 mt-9">
@@ -721,7 +678,7 @@ const Personal = () => {
 </div>
 
           <div className={toggle === 4 ? "show-content" : "content"}>
-  <form onClick={certificate}>
+  <form onClick={handleCertificateSubmit}>
     <div className="ml-3 mt-16 sm:ml-6 md:ml-12">
       <h1 className="text-left ml-0 sm:ml-4 md:ml-16 text-2xl sm:text-3xl md:text-4xl">Certificates/Awards</h1>
       <div className="mb-4 ml-0 sm:ml-4 md:ml-16 mt-9">
@@ -807,7 +764,7 @@ const Personal = () => {
   </form>
 </div>
 <div className={toggle === 5 ? "show-content" : "content"}>
-  <form onClick={skills}>
+  <form onClick={handleSkillSubmit}>
     <div className="ml-3 mt-16 sm:ml-6 md:ml-12">
       <h1 className="text-left ml-0 sm:ml-4 md:ml-16 text-2xl sm:text-3xl md:text-4xl">Skill</h1>
       <div className="mb-4 ml-0 sm:ml-4 md:ml-16 mt-9">

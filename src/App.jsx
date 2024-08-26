@@ -47,45 +47,46 @@ const App = () => {
         <Route path="/jobseekersignup" element={<Jobseekersignup />} />
         <Route path="/businesslogin" element={<BusinessLogin />} />
         <Route path="/jobseekerlogin" element={<Jobseekerlogin />} />
-        <Route 
-          path="/buildprofile" 
-          element={
-            <PrivateRoute>
-              <Buildprofile />
-            </PrivateRoute>
-          } 
-        />        <Route path="/personal" element={
-          <PrivateRoute>
+        <Route element={<PrivateRoute />}>
+          <Route 
+            path="/buildprofile" 
+            element={<Buildprofile /> } 
+          /> 
+
+           <Route path="/personal" element={
+         
              <Personal />
-          </PrivateRoute>
+         
        
         } />
         <Route path="/jobseekerdashboard"
          element={
-          <PrivateRoute> 
+         
            <JobseekerDashboard />
-          </PrivateRoute>
+          
         
          } />
         <Route path="/jobseekerprofile" 
         element={
-          <PrivateRoute>
+          
             <Jobseekerprofile />
-          </PrivateRoute>
+          
         } />
         <Route
           path="/businessbuildprofile"
           element={ 
-          <PrivateRoute>
+          
             <Businessbuildprofile />
-          </PrivateRoute>}
+          }
         />
         <Route path="/businessdashboard" 
         element={
-          <PrivateRoute>
+         
            <BusinessDashboard />
-          </PrivateRoute>} />
-        <Route path="/listedprojects" element={<PrivateRoute><ListedProjects /></PrivateRoute>} />
+         } />   
+        </Route>
+           
+        <Route path="/listedprojects" element={<ListedProjects />} />
         <Route path="/postajob" element={<PrivateRoute><PostAJob /></PrivateRoute>} />
         <Route path="/postaproject" element={<PrivateRoute> <PostAProject /></PrivateRoute>} />
         <Route path="/businessprofile" element={<PrivateRoute><BusinessProfile /></PrivateRoute>} />
